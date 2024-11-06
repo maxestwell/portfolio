@@ -25,5 +25,32 @@
       "alt": "img",
       "path": "assets/logo.svg"
     }
+  },
+  {
+    "id": 3,
+    "title": "WOOOOOOOOAHHHHHHHHHH",
+    "description": "about the project",
+    "img": {
+      "alt": "img",
+      "path": "assets/logo.svg"
+    }
+  },
+  {
+    "id": 4,
+    "title": ")))))))))))))00000000OOOOOOOOAHHHHHHHHHH",
+    "description": "about the project",
+    "img": {
+      "alt": "img",
+      "path": "assets/logo.svg"
+    }
+  },
+  {
+    "id": 5,
+    "title": "_______-----------<<<>>>>OOOOOOOOAHHHHHHHHHH",
+    "description": "about the project",
+    "img": {
+      "alt": "img",
+      "path": "assets/logo.svg"
+    }
   }
 ]

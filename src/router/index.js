@@ -6,18 +6,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/Home.vue'),
+      component: () => import('../views/HomeView.vue'),
     },
     {
       path: '/project/:projectId',
       name: 'project',
-      component: () => import('../views/Project.vue'),
-      props: true,
-    },
-    {
-      path: '/project/:projectId/tasks',
-      name: 'taskLists',
-      component: () => import('../views/TaskLists.vue'),
+      component: () => import('../views/ProjectView.vue'),
       props: true,
     },
   ],
