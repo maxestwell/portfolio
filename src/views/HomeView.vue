@@ -12,11 +12,11 @@ defineComponent({
     Projects,
   },
   filters: {
-    pretty: function (value) {
-      if (!value) return ''
-      value = JSON.stringify(value, null, 4)
-      return value
-    },
+    // pretty: function (value) {
+    //   if (!value) return ''
+    //   value = JSON.stringify(value, null, 4)
+    //   return value
+    // },
   },
 })
 </script>
