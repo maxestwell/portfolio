@@ -1,38 +1,38 @@
 <script>
-import projectsData from "@/projects.json";
+import projectsData from '@/projects.json'
 
-import Projects from "@/components/Projects.vue";
+import Projects from '@/components/Projects.vue'
 
 export default {
-  name: "Home",
+  name: 'Home',
   data: () => ({
-    projectsData
+    projectsData,
   }),
   components: {
-    Projects
+    Projects,
   },
   filters: {
-    pretty: function(value) {
-      if (!value) return "";
-      value = JSON.stringify(value, null, 4);
-      return value;
-    }
-  }
-};
+    pretty: function (value) {
+      if (!value) return ''
+      value = JSON.stringify(value, null, 4)
+      return value
+    },
+  },
+}
 </script>
 
 <template>
   <div class="component-wrapper component-wrapper--data-table">
     <transition name="fade" mode="out-in" appear>
       <div v-if="projectsData">
-        <Projects :projects="projectsData"/>
-        <hr>
+        <Projects :projects="projectsData" />
+        <hr />
         <h2>Projects:</h2>
         <!-- <code class="code-box">{{ projectsData }}</code> -->
       </div>
       <content-placeholders v-else>
-        <content-placeholders-heading/>
-        <content-placeholders-text :lines="4"/>
+        <content-placeholders-heading />
+        <content-placeholders-text :lines="4" />
       </content-placeholders>
     </transition>
   </div>
@@ -40,7 +40,7 @@ export default {
 
 <style scoped>
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 3rem;
 }
 

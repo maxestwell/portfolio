@@ -14,6 +14,12 @@ const router = createRouter({
       component: () => import('../views/Project.vue'),
       props: true,
     },
+    {
+      path: '/project/:projectId/tasks',
+      name: 'taskLists',
+      component: () => import('../views/TaskLists.vue'),
+      props: true,
+    },
   ],
 })
 

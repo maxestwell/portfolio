@@ -1,32 +1,32 @@
 <script>
-import projectsData from "@/projects.json";
+import projectsData from '@/projects.json'
 
 export default {
-  name: "Project",
-  props: ["projectId"],
+  name: 'Project',
+  props: ['projectId'],
   computed: {
     project() {
-      return projectsData.find(p => p.id === parseInt(this.projectId, 10));
-    }
+      return projectsData.find((p) => p.id === parseInt(this.projectId, 10))
+    },
   },
   filters: {
-    pretty: function(value) {
-      if (!value) return "";
-      value = JSON.stringify(value, null, 4);
-      return value;
-    }
-  }
-};
+    pretty: function (value) {
+      if (!value) return ''
+      value = JSON.stringify(value, null, 4)
+      return value
+    },
+  },
+}
 </script>
 
 <template>
   <div>
-    <router-link :to="{name:'home'}">Go back</router-link>
+    <router-link :to="{ name: 'home' }">Go back</router-link>
 
     <h3>{{ project.title }}</h3>
     <!-- <code class="code-box">{{ project }}</code> -->
-    <p>{{ project }}</p>
-    <router-link :to="{name:'taskLists', params: { projectId }}">Task Lists</router-link>
+    <p>{{ project.img.path }}</p>
+    <!-- <router-link :to="{ name: 'taskLists', params: { projectId } }">Task Lists</router-link> -->
   </div>
 </template>
 
