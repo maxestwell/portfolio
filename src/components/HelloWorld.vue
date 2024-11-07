@@ -1,12 +1,12 @@
-<script setup lang="ts">
-defineProps<{
-  msg: string
-}>()
+<script setup>
+defineProps({
+  msg: String,
+})
 import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink } from 'vue-router'
 
-const textElement = ref<HTMLElement | null>(null)
+const textElement = ref(null)
 
 onMounted(() => {
   const handleMouseEnter = () => {
