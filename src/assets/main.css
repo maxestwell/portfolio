@@ -54,6 +54,10 @@ font-variation-settings:
   display: inline-block;
 } */
 
+a {
+  cursor: pointer;
+}
+
 a,
 .heading {
   text-decoration: none;

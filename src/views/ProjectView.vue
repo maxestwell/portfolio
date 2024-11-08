@@ -14,9 +14,9 @@ const project = computed(() => {
 
 <template>
   <div>
-    <router-link :to="{ name: 'home' }">Go back</router-link>
+    <!-- <router-link :to="{ name: 'home' }">Go back</router-link> -->
     <!-- Display the project details if found -->
-    <div v-if="project" class="project-card">
+    <div v-if="project" class="project-info">
       <img :src="project.img.path" :alt="project.img.alt" class="project-image" />
       <h3>{{ project.title }}</h3>
       <p>{{ project.description }}</p>
@@ -30,10 +30,6 @@ const project = computed(() => {
 </template>
 
 <style scoped>
-.project-card {
-  margin: 20px;
-}
-
 .project-image {
   width: 100%;
   height: auto;

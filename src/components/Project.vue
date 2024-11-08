@@ -23,8 +23,8 @@ function showProject(id) {
 <template>
   <div class="project">
     <div class="details">
-      <h3 @click="showProject(project.id)">
-        <a>{{ project.title }}</a>
+      <h3>
+        <a @click="showProject(project.id)">{{ project.title }}</a>
       </h3>
     </div>
   </div>
