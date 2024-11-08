@@ -7,7 +7,8 @@ const props = defineProps(['projectId'])
 
 // Find the project that matches the provided ID
 const project = computed(() => {
-  return projectsData.find((p) => p.id === parseInt(props.projectId, 10))
+  return projectsData.find((p) => p.id === parseInt(props.projectId))
+  // return projectsData.find((p) => p.id === parseInt(props.projectId, 10))
 })
 </script>
 
