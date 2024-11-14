@@ -12,5 +12,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  base: '/tellus/', // This sets the base path for all assets
+  base: '/vue-project/', // This sets the base path for all assets
 })
