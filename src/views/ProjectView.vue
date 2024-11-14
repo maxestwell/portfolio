@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import projectsData from '@/projects.json'
+import projectsData from '@/assets/data/project.json'
 
 // Define the `projectId` prop to identify the project to display
 const props = defineProps(['projectId'])
