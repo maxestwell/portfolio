@@ -3,17 +3,18 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Or your default branch name
+      - main # Change this to your default branch if it's not 'main'
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3 # Update to the latest version
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
           node-version: '18' # Specify the Node.js version to use
 
@@ -23,8 +24,11 @@ jobs:
       - name: Build the project
         run: npm run build
 
+      - name: List build output
+        run: ls -la ./dist
+
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4 # Update to the latest version
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./dist # Make sure this points to your build output directory
