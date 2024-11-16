@@ -1,6 +1,6 @@
 <script setup>
 // import { defineComponent } from 'vue'
-import projectsData from '@/assets/data/project.json'
+import projectsData from '@/project.json'
 import Projects from '@/components/Projects.vue'
 
 // defineComponent({

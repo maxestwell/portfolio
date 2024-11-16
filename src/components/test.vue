@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import projectsData from '@/assets/data/project.json'
+import projectsData from '@/project.json'
 
 const props = defineProps({
   projectId: {

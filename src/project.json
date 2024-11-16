@@ -5,7 +5,7 @@
     "description": "My project",
     "img": {
       "alt": "img",
-      "path": "../images/test.jpg"
+      "path": "/images/test.jpg"
     }
   },
   {
@@ -14,7 +14,7 @@
     "description": "uhoh",
     "img": {
       "alt": "img",
-      "path": "../images/test.jpg"
+      "path": "/images/test.jpg"
     }
   },
   {
@@ -23,7 +23,7 @@
     "description": "hmmm",
     "img": {
       "alt": "img",
-      "path": "../images/test.jpg"
+      "path": "/images/test.jpg"
     }
   },
   {
@@ -32,7 +32,7 @@
     "description": "eeeee",
     "img": {
       "alt": "img",
-      "path": "../images/test.jpg"
+      "path": "/images/test.jpg"
     }
   },
   {
@@ -41,7 +41,7 @@
     "description": "waaaaahhhhh",
     "img": {
       "alt": "img",
-      "path": "../images/test.jpg"
+      "path": "/images/test.jpg"
     }
   },
   {
@@ -50,7 +50,7 @@
     "description": "zzzzzzzzzzzzzz",
     "img": {
       "alt": "img",
-      "path": "../images/test.jpg"
+      "path": "/images/test.jpg"
     }
   }
 ]
