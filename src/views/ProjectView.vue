@@ -1,4 +1,5 @@
 <script setup>
+import Test from '@/components/test.vue'
 const props = defineProps({
   projectId: {
     type: String,
