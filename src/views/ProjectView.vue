@@ -1,10 +1,16 @@
 <script setup>
-import test from '@/components/test.vue'
+const props = defineProps({
+  projectId: {
+    type: String,
+    required: true,
+  },
+})
 </script>
 
 <template>
-  <test />
+  <test :projectId="projectId" />
 </template>
+
 
 <style scoped>
 .project-image {

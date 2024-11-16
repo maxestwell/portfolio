@@ -2,10 +2,7 @@
 import Project from '@/components/Project.vue'
 
 const props = defineProps({
-  projects: {
-    type: Array,
-    required: true,
-  },
+  projects: Array,
 })
 </script>
 
@@ -14,6 +11,7 @@ const props = defineProps({
     <Project v-for="project in projects" :key="project.id" :project="project" />
   </div>
 </template>
+
 
 <style scoped>
 a {

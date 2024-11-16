@@ -6,11 +6,11 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/vue-project/',
   plugins: [vue(), vueJsx()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  base: '/vue-project/', // This sets the base path for all assets
 })
