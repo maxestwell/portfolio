@@ -37,7 +37,7 @@ onMounted(() => {
 <template>
   <div class="maxiswell">
     <h1 class="heading" ref="textElement">
-      <RouterLink to="/">mmmmax <i>is</i> well</RouterLink>
+      <RouterLink to="/">mmmmaaaax <i>is</i> well</RouterLink>
     </h1>
   </div>
 </template>
