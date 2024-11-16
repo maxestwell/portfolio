@@ -10,7 +10,7 @@ const textElement = ref(null)
 
 onMounted(() => {
   const handleMouseEnter = () => {
-    const isElement = textElement.value?.querySelector('i')
+    const isElement = textElement.value?.querySelector('span')
     if (isElement) {
       gsap.to(isElement, {
         duration: 0.5,
@@ -20,11 +20,11 @@ onMounted(() => {
   }
 
   const handleMouseLeave = () => {
-    const isElement = textElement.value?.querySelector('i')
+    const isElement = textElement.value?.querySelector('span')
     if (isElement) {
       gsap.to(isElement, {
         duration: 0.5,
-        fontVariationSettings: "'slnt' 0, 'wght' 400",
+        fontVariationSettings: "'slnt' 0, 'wght' 500",
       })
     }
   }
@@ -37,17 +37,17 @@ onMounted(() => {
 <template>
   <div class="maxiswell">
     <h1 class="heading" ref="textElement">
-      <RouterLink to="/">mmmmaaaax <i>is</i> well</RouterLink>
+      <RouterLink to="/">max <span>is</span> well</RouterLink>
     </h1>
   </div>
 </template>
 
 <style scoped>
-i {
+span {
   font-style: normal;
   font-variation-settings:
     'slnt' 0,
-    'wght' 400;
+    'wght' 500;
 }
 
 .heading {

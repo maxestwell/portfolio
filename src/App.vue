@@ -20,6 +20,7 @@ header {
   height: 90px;
   position: sticky;
   top: 0;
+  z-index: 10; /* Add this line */
 }
 
 header .wrapper {

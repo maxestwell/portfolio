@@ -14,7 +14,7 @@ function showProject(id) {
   router.push({
     name: 'project',
     params: {
-      projectId: props.project.id,
+      projectId: id,
     },
   })
 }
@@ -23,8 +23,8 @@ function showProject(id) {
 <template>
   <div class="project">
     <div class="details">
-      <h3>
-        <a @click="showProject(project.id)">{{ project.title }}</a>
+      <h3 @click="showProject(project.id)">
+        <a>{{ project.title }}</a>
       </h3>
     </div>
   </div>
@@ -38,10 +38,9 @@ function showProject(id) {
 }
 
 .details {
-  /* flex: 1; */
+  /* Add your styles here */
   display: flex;
   align-items: end;
-  /* margin-left: 1rem; */
 }
 
 h3 {
