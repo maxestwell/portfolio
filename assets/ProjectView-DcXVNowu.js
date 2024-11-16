@@ -1,0 +1,1 @@
+import{_ as o,b as r,g as c,o as s}from"./index-DjDfYjmh.js";const p={__name:"ProjectView",props:{projectId:{type:String,required:!0}},setup(e){return(a,n)=>{const t=c("test");return s(),r(t,{projectId:e.projectId},null,8,["projectId"])}}},d=o(p,[["__scopeId","data-v-2004a9a7"]]);export{d as default};
