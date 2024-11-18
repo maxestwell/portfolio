@@ -60,7 +60,7 @@ onMounted(() => {
 
 .logo:hover {
   animation: rotate 10s linear infinite;
-  transform-origin: 50% 50%; /* Explicit center origin */
+  transform-origin: 50% 50%;
 }
 
 @keyframes rotate {
