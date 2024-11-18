@@ -5,6 +5,7 @@ defineProps({
 import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 import { RouterLink } from 'vue-router'
+import Logo from '@/components/Logo.vue'
 
 const textElement = ref(null)
 
@@ -36,6 +37,9 @@ onMounted(() => {
 
 <template>
   <div class="maxiswell">
+    <div class="logo">
+      <Logo />
+    </div>
     <h1 class="heading" ref="textElement">
       <RouterLink to="/">max <span>is</span> well</RouterLink>
     </h1>
@@ -43,6 +47,31 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.maxiswell {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 3em;
+  height: auto;
+  margin-right: 1em;
+}
+
+.logo:hover {
+  animation: rotate 10s linear infinite;
+  transform-origin: 50% 50%; /* Explicit center origin */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 span {
   font-style: normal;
   font-variation-settings:

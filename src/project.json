@@ -1,17 +1,17 @@
 [
   {
     "id": 0,
-    "title": "Project",
-    "description": "My project",
+    "title": "Hand Tracking Synth",
+    "description": "Cycling '74",
     "img": {
       "alt": "img",
-      "path": "/portfolio/images/test.jpg"
+      "path": "/portfolio/images/hand-tracking-synth.jpg"
     }
   },
   {
     "id": 1,
-    "title": "AHHH",
-    "description": "uhoh",
+    "title": "Tellus",
+    "description": "waaaaahhhhh",
     "img": {
       "alt": "img",
       "path": "/portfolio/images/test.jpg"
@@ -19,29 +19,29 @@
   },
   {
     "id": 2,
-    "title": "RAHHHHHHHHHH",
-    "description": "hmmm",
+    "title": "IxD Zine",
+    "description": "uhoh",
     "img": {
       "alt": "img",
-      "path": "/portfolio/images/test.jpg"
+      "path": "/portfolio/images/ixd-zine.jpg"
     }
   },
   {
     "id": 3,
-    "title": "WOOOOOOOOAHHHHHHHHHH",
-    "description": "eeeee",
+    "title": "\"WHY ARE MY FRIENDS BLUE?\"",
+    "description": "hmmm",
     "img": {
       "alt": "img",
-      "path": "/portfolio/images/test.jpg"
+      "path": "/portfolio/images/cd-packaging.jpg"
     }
   },
   {
     "id": 4,
-    "title": ")))))))))))))00000000OOOOOOOOAHHHHHHHHHH",
-    "description": "waaaaahhhhh",
+    "title": "Personal Website",
+    "description": "eeeee",
     "img": {
       "alt": "img",
-      "path": "/portfolio/images/test.jpg"
+      "path": "/portfolio/images/personal-website.jpg"
     }
   },
   {
