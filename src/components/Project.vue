@@ -1,47 +1,44 @@
 <script setup>
-import { useRouter } from 'vue-router'
+import { computed } from 'vue'
+import projectsData from '@/project.json'
 
 const props = defineProps({
-  project: {
-    type: Object,
+  projectId: {
+    type: [String, Number],
     required: true,
   },
 })
 
-const router = useRouter()
-
-function showProject(id) {
-  router.push({
-    name: 'project',
-    params: {
-      projectId: id,
-    },
-  })
-}
+const project = computed(() =>
+  projectsData.find((p) => p.id === Number(props.projectId))
+)
 </script>
 
 <template>
-  <a @click="showProject(project.id)" class="details">
-    <img :src="project.img.path" :alt="project.img.alt" class="project-image" />
-    <h3>{{ project.title }}</h3>
-  </a>
+  <div>
+    <div v-if="project" class="project-info">
+      <img :src="project.img.path" :alt="project.img.alt" class="project-image" />
+      <h1>{{ project.title }}</h1>
+      <p>{{ project.description }}</p>
+    </div>
+    <div v-else>
+      <p>Project not found.</p>
+    </div>
+  </div>
 </template>
 
-<style scoped>
-.details {
-  height: 10rem;
-  width: 100%;
-  /* Add your styles here */
-  display: grid;
-  grid: auto-flow / 1fr 2fr;
-  gap: 1rem;
-  align-items: end;
-}
 
+<style scoped>
 .project-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  overflow: hidden;
+  height: auto;
+}
+
+h3 {
+  margin-top: 10px;
+}
+
+p {
+  margin-top: 5px;
 }
 </style>

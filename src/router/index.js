@@ -14,6 +14,24 @@ const router = createRouter({
       component: () => import('../views/ProjectView.vue'),
       props: true,
     },
+    {
+      path: '/projects',
+      name: 'projects',
+      component: () => import('../views/ProjectsView.vue'),
+      props: true,
+    },
+    {
+      path: '/music',
+      name: 'music',
+      component: () => import('../views/MusicView.vue'),
+      props: true,
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('../views/AboutView.vue'),
+      props: true,
+    },
   ],
 })
 

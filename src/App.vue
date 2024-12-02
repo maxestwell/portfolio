@@ -9,6 +9,7 @@ import maxiswell from './components/maxiswell.vue'
       <maxiswell />
     </header>
     <RouterView class="everything" />
+    <footer></footer>
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import maxiswell from './components/maxiswell.vue'
 .everything-container,
 .everything {
   padding: 1rem;
+  height: 100%;
 }
 
 header {

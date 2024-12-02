@@ -1,35 +1,28 @@
 <script setup>
-// import { defineComponent } from 'vue'
-import projectsData from '@/project.json'
-import Project from '@/components/Project.vue'
-
-// defineComponent({
-//   name: 'Home',
-//   data: () => ({
-//     projectsData,
-//   }),
-//   components: {
-//     Projects,
-//   },
-//   filters: {
-//     // pretty: function (value) {
-//     //   if (!value) return ''
-//     //   value = JSON.stringify(value, null, 4)
-//     //   return value
-//     // },
-//   },
-// })
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <div class="project-grid" v-if="projectsData">
-    <Project v-for="project in projectsData" :key="project.id" :project="project" />
-  </div>
+  <main class="home">
+    <RouterLink to="/projects">
+      <h4>design</h4>
+    </RouterLink>
+    <h4>+</h4>
+    <RouterLink to="/music">
+      <h4>music</h4>
+    </RouterLink>
+  </main>
 </template>
 
 <style scoped>
-.project-grid {
-  display: grid;
-  gap: 1rem;
+html,
+body {
+  height: 100%;
+}
+.home {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

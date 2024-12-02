@@ -1,49 +1,41 @@
 <script setup>
-defineProps({
+import { reactive } from 'vue'
+import HoverEffect from '@/components/HoverEffect.vue'
+
+const props = defineProps({
   msg: String,
 })
-import HoverEffect from '@/components/HoverEffect.vue'
-</script>
 
-<script>
-export default {
-  data() {
-    return {
-      clickSequence: [],
-      showMessage: false,
-      messages: ['yes!', 'i think so?...', 'who?', 'OF COURSE!!'],
-      currentMessage: '',
-      randomTop: '50%',
-      randomLeft: '50%',
-      randomRotation: '0deg',
-    }
-  },
-  methods: {
-    handleClick(word) {
-      this.clickSequence.push(word)
-      if (this.clickSequence.join(' ') === 'is max well') {
-        this.currentMessage = this.messages[Math.floor(Math.random() * this.messages.length)]
-        this.randomTop = Math.random() * 80 + 'vh'
-        this.randomLeft = Math.random() * 80 + 'vw'
-        this.randomRotation = Math.random() * 360 + 'deg'
-        this.showMessage = true
-        setTimeout(() => {
-          this.showMessage = false
-          this.clickSequence = []
-        }, 3000) // Flash text disappears after 3 seconds
-      } else if (this.clickSequence.length > 3) {
-        this.clickSequence = []
-      }
-    },
-  },
+const state = reactive({
+  clickSequence: [],
+  showMessage: false,
+  messages: ['yes!', 'i think so?...', 'who?', 'OF COURSE!!'],
+  currentMessage: '',
+  randomTop: '50%',
+  randomLeft: '50%',
+  randomRotation: '0deg',
+})
+
+function handleClick(word) {
+  state.clickSequence.push(word)
+  if (state.clickSequence.join(' ') === 'is max well') {
+    state.currentMessage = state.messages[Math.floor(Math.random() * state.messages.length)]
+    state.randomTop = Math.random() * 95 + 'vh'
+    state.randomLeft = Math.random() * 95 + 'vw'
+    state.randomRotation = Math.random() * 360 + 'deg'
+    state.showMessage = true
+    setTimeout(() => {
+      state.showMessage = false
+      state.clickSequence = []
+    }, 3000) // Flash text disappears after 3 seconds
+  } else if (state.clickSequence.length > 3) {
+    state.clickSequence = []
+  }
 }
 </script>
 
 <template>
   <div class="maxiswell">
-    <!-- <div class="logo">
-      <Logo />
-    </div> -->
     <RouterLink to="/" class="heading">
       <HoverEffect
         defaultSettings="'INKT' 100, 'slnt' 0, 'wdth' 100, 'wght' 500"
@@ -65,20 +57,31 @@ export default {
       </HoverEffect>
     </RouterLink>
     <div
-      v-if="showMessage"
+      v-if="state.showMessage"
       class="message-container text-node-ignore"
       :style="{
-        top: randomTop,
-        left: randomLeft,
-        transform: `translate(-50%, -50%) rotate(${randomRotation})`,
+        top: state.randomTop,
+        left: state.randomLeft,
+        transform: `translate(-50%, -50%) rotate(${state.randomRotation})`,
       }"
     >
-      {{ currentMessage }}
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <path
+          d="M31.2,86.7c-.5-1.5-2.1-2.3-3.6-2-8.1,1.4-16.5-2.2-20.9-9.7-4.3-7.5-3.2-16.7,2.1-23,1-1.2,1-2.9,0-4.1-5.3-6.3-6.4-15.4-2.1-23,4.3-7.5,12.8-11.1,20.9-9.7,1.5.3,3.1-.6,3.6-2C33.9,5.5,41.3,0,50,0s16.1,5.5,18.8,13.3c.5,1.5,2.1,2.3,3.6,2,8.1-1.4,16.5,2.2,20.9,9.7,4.3,7.5,3.2,16.7-2.1,23-1,1.2-1,2.9,0,4.1,5.3,6.3,6.4,15.4,2.1,23-4.3,7.5-12.8,11.1-20.9,9.7-1.5-.3-3.1.6-3.6,2-2.8,7.7-10.2,13.3-18.8,13.3-8.7,0-16.1-5.5-18.8-13.3Z"
+        />
+      </svg>
+      <div class="text-overlay">{{ state.currentMessage }}</div>
     </div>
   </div>
 </template>
 
 <style scoped>
+@media (hover: hover) {
+  a:hover {
+    background-color: transparent;
+  }
+}
+
 .heading {
   position: absolute;
   width: 100%;
@@ -89,11 +92,25 @@ export default {
 
 .message-container {
   position: fixed;
-  background-color: yellow;
-  padding: 20px;
-  font-size: 1rem;
-  border: 2px solid black;
   z-index: 1;
+  pointer-events: none;
+}
+
+.text-overlay {
+  font-size: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+svg {
+  fill: var(--vt-c-yellow);
+  stroke-width: 0;
+  width: 6em;
+  height: 6em;
 }
 
 /* .logo {

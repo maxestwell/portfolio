@@ -1,5 +1,5 @@
 <script setup>
-import Test from '@/components/test.vue'
+import Project from '@/components/Project.vue'
 const props = defineProps({
   projectId: {
     type: String,
@@ -9,9 +9,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <test :projectId="projectId" />
+  <Project :projectId="projectId" />
 </template>
-
 
 <style scoped>
 .project-image {

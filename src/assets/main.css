@@ -1,5 +1,10 @@
 @import './custom.css';
 
+html,
+body {
+  height: 100%;
+}
+
 #app {
   /* max-width: 1280px; */
   margin: 0 auto;
@@ -19,7 +24,7 @@
 .span-container {
   display: inline-block;
   position: relative;
-  top: 0.36em;
+  top: 0.35em;
   pointer-events: none;
 }
 
@@ -48,12 +53,51 @@ a,
   text-decoration: none;
   color: var(--color-text);
   transition: 0.4s;
-
-  /* height: 100%; */
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: #ffc033cc;
+    background-color: #ffc033;
   }
 }
+
+/* text styling */
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* end text styling */
