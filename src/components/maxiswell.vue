@@ -37,17 +37,18 @@ onMounted(() => {
 
 <template>
   <div class="maxiswell">
-    <div class="logo">
+    <!-- <div class="logo">
       <Logo />
-    </div>
-    <h1 class="heading" ref="textElement">
-      <RouterLink to="/">max <span>is</span> well</RouterLink>
-    </h1>
+    </div> -->
+      <RouterLink to="/">
+        <h1 class="heading" ref="textElement">max <span>is</span> well</h1>
+      </RouterLink>
   </div>
 </template>
 
 <style scoped>
-.maxiswell {
+/* .maxiswell {
+  position: absolute;
   display: flex;
   align-items: center;
 }
@@ -72,6 +73,10 @@ onMounted(() => {
   }
 }
 
+.heading {
+  display: inline-block;
+} */
+
 span {
   font-style: normal;
   font-variation-settings:
@@ -79,7 +84,4 @@ span {
     'wght' 500;
 }
 
-.heading {
-  display: inline-block;
-}
 </style>

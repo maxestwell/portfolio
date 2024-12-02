@@ -23,9 +23,9 @@ function showProject(id) {
 <template>
   <div class="project">
     <div class="details">
-      <h3 @click="showProject(project.id)">
-        <a>{{ project.title }}</a>
-      </h3>
+      <a>
+        <h3 @click="showProject(project.id)">{{ project.title }}</h3>
+      </a>
     </div>
   </div>
 </template>
@@ -43,11 +43,11 @@ function showProject(id) {
   align-items: end;
 }
 
-h3 {
+/* h3 {
   font-size: 1.2rem;
   font-weight: 900;
   color: var(--color-heading);
-}
+} */
 
 /* @media (min-width: 1024px) {
   .item {

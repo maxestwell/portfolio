@@ -18,7 +18,7 @@ const project = computed(() =>
   <div>
     <div v-if="project" class="project-info">
       <img :src="project.img.path" :alt="project.img.alt" class="project-image" />
-      <h3>{{ project.title }}</h3>
+      <h1>{{ project.title }}</h1>
       <p>{{ project.description }}</p>
     </div>
     <div v-else>
