@@ -25,6 +25,9 @@ export default {
         const findNearestSemanticParent = (node) => {
           let parent = node.parentElement
           while (parent && !semanticTags.includes(parent.tagName) && parent !== el) {
+            if (parent.classList.contains('message-container')) {
+              return null
+            }
             parent = parent.parentElement
           }
           return parent
@@ -35,21 +38,25 @@ export default {
           const textNodes = getAllTextNodes(root)
           textNodes.forEach((node) => {
             const parent = findNearestSemanticParent(node)
-            if (parent && !processedParents.has(parent)) {
+            if (
+              parent &&
+              !processedParents.has(parent) &&
+              !parent.classList.contains('text-node-ignore')
+            ) {
               processedParents.add(parent)
               parent.classList.add('text-node-parent')
 
-              // Create a div element
-              const div = document.createElement('div')
-              div.classList.add('div-container') // Add class to the div
+              // Create a span element
+              const span = document.createElement('span')
+              span.classList.add('span-container') // Add class to the span
 
-              // Move all child elements of the parent into the div
+              // Move all child elements of the parent into the span
               while (parent.firstChild) {
-                div.appendChild(parent.firstChild)
+                span.appendChild(parent.firstChild)
               }
 
-              // Append the div to the parent
-              parent.appendChild(div)
+              // Append the span to the parent
+              parent.appendChild(span)
             }
           })
         }
