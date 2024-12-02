@@ -4,19 +4,22 @@ import maxiswell from './components/maxiswell.vue'
 </script>
 
 <template>
-  <header>
+  <div v-style-text-nodes>
+    <header>
       <maxiswell />
-  </header>
-  <RouterView />
+    </header>
+    <RouterView class="everything" />
+  </div>
 </template>
 
 <style scoped>
 header {
-  /* line-height: 1.5; */
-  /* max-width: 100vh; */
-  /* height: 90px; */
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+.everything {
+  padding: 1rem;
 }
 </style>

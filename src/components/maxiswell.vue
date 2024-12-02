@@ -2,37 +2,7 @@
 defineProps({
   msg: String,
 })
-import { ref, onMounted } from 'vue'
-import { gsap } from 'gsap'
-import { RouterLink } from 'vue-router'
-import Logo from '@/components/Logo.vue'
-
-const textElement = ref(null)
-
-onMounted(() => {
-  const handleMouseEnter = () => {
-    const isElement = textElement.value?.querySelector('span')
-    if (isElement) {
-      gsap.to(isElement, {
-        duration: 0.5,
-        fontVariationSettings: "'slnt' -10, 'wght' 900",
-      })
-    }
-  }
-
-  const handleMouseLeave = () => {
-    const isElement = textElement.value?.querySelector('span')
-    if (isElement) {
-      gsap.to(isElement, {
-        duration: 0.5,
-        fontVariationSettings: "'slnt' 0, 'wght' 500",
-      })
-    }
-  }
-
-  textElement.value?.addEventListener('mouseenter', handleMouseEnter)
-  textElement.value?.addEventListener('mouseleave', handleMouseLeave)
-})
+import HoverEffect from '@/components/HoverEffect.vue'
 </script>
 
 <template>
@@ -40,20 +10,30 @@ onMounted(() => {
     <!-- <div class="logo">
       <Logo />
     </div> -->
-      <RouterLink to="/">
-        <h1 class="heading" ref="textElement">max <span>is</span> well</h1>
-      </RouterLink>
+    <RouterLink to="/" class="heading">
+      <h1 ref="textElement">max</h1>
+      <h1>
+        <HoverEffect
+          defaultSettings="'INKT' 100, 'slnt' 0, 'wdth' 100, 'wght' 500"
+          hoverSettings="'INKT' 100, 'slnt' -10, 'wdth' 100, 'wght' 900"
+          >is</HoverEffect
+        >
+      </h1>
+      <h1>well</h1>
+    </RouterLink>
   </div>
 </template>
 
 <style scoped>
-/* .maxiswell {
+.heading {
   position: absolute;
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.logo {
+/* .logo {
   width: 3em;
   height: auto;
   margin-right: 1em;
@@ -71,17 +51,5 @@ onMounted(() => {
   to {
     transform: rotate(360deg);
   }
-}
-
-.heading {
-  display: inline-block;
 } */
-
-span {
-  font-style: normal;
-  font-variation-settings:
-    'slnt' 0,
-    'wght' 500;
-}
-
 </style>

@@ -1,7 +1,7 @@
 <script setup>
 // import { defineComponent } from 'vue'
 import projectsData from '@/project.json'
-import Projects from '@/components/Projects.vue'
+import Project from '@/components/Project.vue'
 
 // defineComponent({
 //   name: 'Home',
@@ -22,13 +22,14 @@ import Projects from '@/components/Projects.vue'
 </script>
 
 <template>
-  <div class="component-wrapper component-wrapper--data-table">
-    <transition name="fade" mode="out-in" appear>
-      <div v-if="projectsData">
-        <Projects :projects="projectsData" />
-      </div>
-    </transition>
+  <div class="project-grid" v-if="projectsData">
+    <Project v-for="project in projectsData" :key="project.id" :project="project" />
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.project-grid {
+  display: grid;
+  gap: 1rem;
+}
+</style>
