@@ -29,21 +29,24 @@ p::before {
   height: 0.3em; 
 } */
 
-.text-node-parent::before {
+/* .text-node-parent::before {
   content: '';
   display: block;
   height: 0.3em;
   background-color: #ccc;
+} */
+
+.div-container {
+  display: inline-block;
+  position: relative;
+  top: 0.36em;
+  pointer-events: none;
 }
 
 .text-node-parent {
-  display: inline-block !important;
-  vertical-align: 10px !important;
-}
-
-/* .text-node-parent {
   background-color: #ccc;
-} */
+  width: fit-content;
+}
 
 /* ::target-text {
   background-color: red;

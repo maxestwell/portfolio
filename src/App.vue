@@ -4,7 +4,7 @@ import maxiswell from './components/maxiswell.vue'
 </script>
 
 <template>
-  <div v-style-text-nodes>
+  <div class="everything-container" v-style-text-nodes>
     <header>
       <maxiswell />
     </header>
@@ -19,7 +19,8 @@ header {
   z-index: 1;
 }
 
-.everything {
+.everything,
+.everything-container {
   padding: 1rem;
 }
 </style>

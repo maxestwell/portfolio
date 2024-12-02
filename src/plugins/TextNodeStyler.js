@@ -1,7 +1,7 @@
 export default {
   install(app) {
     app.directive('style-text-nodes', {
-      mounted(el) {
+      mounted(el, binding) {
         const semanticTags = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'P'] // Add more semantic tags as needed
 
         // Function to get all text nodes in the element
@@ -38,6 +38,18 @@ export default {
             if (parent && !processedParents.has(parent)) {
               processedParents.add(parent)
               parent.classList.add('text-node-parent')
+
+              // Create a div element
+              const div = document.createElement('div')
+              div.classList.add('div-container') // Add class to the div
+
+              // Move all child elements of the parent into the div
+              while (parent.firstChild) {
+                div.appendChild(parent.firstChild)
+              }
+
+              // Append the div to the parent
+              parent.appendChild(div)
             }
           })
         }
@@ -45,9 +57,18 @@ export default {
         // Initial pass to style the text nodes
         styleTextNodes(el)
 
+        // Notify that styling is done
+        if (binding.value && typeof binding.value === 'function') {
+          binding.value()
+        }
+
         // Set up a Mutation Observer to handle dynamic content
         const observer = new MutationObserver(() => {
           styleTextNodes(el)
+          // Notify that styling is done
+          if (binding.value && typeof binding.value === 'function') {
+            binding.value()
+          }
         })
 
         observer.observe(el, { childList: true, subtree: true })
