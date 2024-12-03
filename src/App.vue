@@ -9,15 +9,31 @@ import maxiswell from './components/maxiswell.vue'
       <maxiswell />
     </header>
     <RouterView class="everything" />
-    <footer></footer>
+    <footer>
+      <p class="text-node-ignore">my name is max, i like design and music woohoo</p>
+    </footer>
   </div>
 </template>
 
 <style scoped>
-.everything-container,
+.everything-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* .everything-container,
 .everything {
   padding: 1rem;
-  height: 100%;
+  outline: 1px solid red;
+} */
+
+.everything {
+  flex-grow: 1;
+  margin: 1rem;
+  outline: 1px solid red;
 }
 
 header {

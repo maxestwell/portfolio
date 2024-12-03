@@ -3,7 +3,7 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <main class="home">
+  <main class="home full-height">
     <RouterLink to="/projects">
       <h4>design</h4>
     </RouterLink>
@@ -15,14 +15,10 @@ import { RouterLink } from 'vue-router'
 </template>
 
 <style scoped>
-html,
-body {
-  height: 100%;
-}
 .home {
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 </style>

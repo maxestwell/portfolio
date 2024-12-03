@@ -1,7 +1,9 @@
 <script setup></script>
 
 <template>
-  <h1>music</h1>
+  <div>
+    <h1>music</h1>
+  </div>
 </template>
 
 <style scoped></style>

@@ -1,6 +1,5 @@
 <script setup>
-// import { defineComponent } from 'vue'
-import projectsData from '@/project.json'
+import projectsData from '@/assets/data/project.json'
 import ProjectList from '@/components/ProjectList.vue'
 </script>
 

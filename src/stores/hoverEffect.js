@@ -6,7 +6,7 @@ export const useHoverEffectStore = defineStore('hoverEffect', {
     applyHoverEffects(element, defaultSettings, hoverSettings) {
       const handleMouseEnter = () => {
         if (element) {
-          console.log('Mouse enter:', element)
+          // console.log('Mouse enter:', element)
           gsap.to(element, {
             duration: 0.3,
             fontVariationSettings: hoverSettings,
@@ -16,7 +16,7 @@ export const useHoverEffectStore = defineStore('hoverEffect', {
 
       const handleMouseLeave = () => {
         if (element) {
-          console.log('Mouse leave:', element)
+          // console.log('Mouse leave:', element)
           gsap.to(element, {
             duration: 0.3,
             fontVariationSettings: defaultSettings,
