@@ -1,34 +1,49 @@
 [
   {
     "id": 0,
-    "title": "Hand Tracking Synth",
-    "subtitle": "CD packaging design",
-    "date": "04/24",
-    "description": "Cycling '74",
-    "img": [
+    "text": [
       {
-        "alt": "img1",
-        "path": "/portfolio/images/hand-tracking-synth.jpg"
-      },
-      {
-        "alt": "img2",
-        "path": "/portfolio/images/hand-tracking-synth.jpg"
+        "title": "Hand Tracking Synth",
+        "subtitle": "CD packaging design",
+        "date": "04/24",
+        "description": "Cycling '74",
+        "font": {
+          "family": "area-variable",
+          "INKT": 100,
+          "slnt": 0,
+          "wdth": 100,
+          "wght": 500
+        }
       }
     ],
-    "font": {
-      "family": "area-variable",
-      "INKT": 100,
-      "slnt": 0,
-      "wdth": 100,
-      "wght": 500
-    }
+    "img": [
+      {
+        "alt": "hand tracking synth mockup",
+        "path": "/portfolio/images/hand-tracking-synth-mockup.jpg"
+      },
+      {
+        "alt": "hand tracking synth mockup",
+        "path": "/portfolio/images/hand-tracking-synth-mockup.jpg"
+      }
+    ]
   },
   {
     "id": 1,
-    "title": "Tellus",
-    "subtitle": "CD packaging design",
-    "date": "10/24",
-    "description": "waaaaahhhhh",
+    "text": [
+      {
+        "title": "Tellus",
+        "subtitle": "CD packaging design",
+        "date": "10/24",
+        "description": "waaaaahhhhh",
+        "font": {
+          "family": "area-variable",
+          "INKT": 100,
+          "slnt": 0,
+          "wdth": 100,
+          "wght": 500
+        }
+      }
+    ],
     "img": [
       {
         "alt": "img1",
@@ -38,93 +53,109 @@
         "alt": "img2",
         "path": "/portfolio/images/test.jpg"
       }
-    ],
-    "font": {
-      "family": "area-variable",
-      "INKT": 100,
-      "slnt": 0,
-      "wdth": 100,
-      "wght": 500
-    }
+    ]
   },
   {
     "id": 2,
-    "title": "IxD Zine",
-    "subtitle": "CD packaging design",
-    "date": "11/23",
-    "description": "uhoh",
-    "img": [
+    "text": [
       {
-        "alt": "img1",
-        "path": "/portfolio/images/ixd-zine.jpg"
-      },
-      {
-        "alt": "img2",
-        "path": "/portfolio/images/ixd-zine.jpg"
+        "title": "IxD Zine",
+        "subtitle": "CD packaging design",
+        "date": "11/23",
+        "description": "uhoh",
+        "font": {
+          "family": "area-variable",
+          "INKT": 100,
+          "slnt": 0,
+          "wdth": 100,
+          "wght": 500
+        }
       }
     ],
-    "font": {
-      "family": "area-variable",
-      "INKT": 100,
-      "slnt": 0,
-      "wdth": 100,
-      "wght": 500
-    }
+    "img": [
+      {
+        "alt": "ixd zine mockup",
+        "path": "/portfolio/images/ixd-zine-mockup.jpg"
+      },
+      {
+        "alt": "ixd zine mockup",
+        "path": "/portfolio/images/ixd-zine-mockup.jpg"
+      }
+    ]
   },
   {
     "id": 3,
-    "title": "WHY ARE MY FRIENDS BLUE?",
-    "subtitle": "CD packaging design",
-    "date": "11/20",
-    "description": "hmmm",
-    "img": [
+    "text": [
       {
-        "alt": "img1",
-        "path": "/portfolio/images/cd-packaging.jpg"
-      },
-      {
-        "alt": "img2",
-        "path": "/portfolio/images/cd-packaging.jpg"
+        "title": "WHY ARE MY FRIENDS BLUE?",
+        "subtitle": "CD packaging design",
+        "date": "11/20",
+        "description": "hmmm",
+        "font": {
+          "family": "area-variable",
+          "INKT": 100,
+          "slnt": 0,
+          "wdth": 100,
+          "wght": 500
+        }
       }
     ],
-    "font": {
-      "family": "area-variable",
-      "INKT": 100,
-      "slnt": 0,
-      "wdth": 100,
-      "wght": 500
-    }
+    "img": [
+      {
+        "alt": "cd packaging mockup",
+        "path": "/portfolio/images/cd-packaging-mockup.jpg"
+      },
+      {
+        "alt": "cd packaging mockup",
+        "path": "/portfolio/images/cd-packaging-mockup.jpg"
+      }
+    ]
   },
   {
     "id": 4,
-    "title": "Personal Website",
-    "subtitle": "CD packaging design",
-    "date": "04/23",
-    "description": "eeeee",
-    "img": [
+    "text": [
       {
-        "alt": "img1",
-        "path": "/portfolio/images/personal-website.jpg"
-      },
-      {
-        "alt": "img2",
-        "path": "/portfolio/images/personal-website.jpg"
+        "title": "Personal Website",
+        "subtitle": "CD packaging design",
+        "date": "04/23",
+        "description": "eeeee",
+        "font": {
+          "family": "area-variable",
+          "INKT": 100,
+          "slnt": 0,
+          "wdth": 100,
+          "wght": 500
+        }
       }
     ],
-    "font": {
-      "family": "area-variable",
-      "INKT": 100,
-      "slnt": 0,
-      "wdth": 100,
-      "wght": 500
-    }
+    "img": [
+      {
+        "alt": "personal website mockup",
+        "path": "/portfolio/images/personal-website-mockup.jpg"
+      },
+      {
+        "alt": "personal website mockup",
+        "path": "/portfolio/images/personal-website-mockup.jpg"
+      }
+    ]
   },
   {
     "id": 5,
-    "title": "title",
-    "subtitle": "subtitle",
-    "date": "00/00",
-    "description": "description",
+    "text": [
+      {
+        "title": "title",
+        "subtitle": "subtitle",
+        "date": "00/00",
+        "description": "description",
+        "font": {
+          "family": "area-variable",
+          "INKT": 100,
+          "slnt": 0,
+          "wdth": 100,
+          "wght": 500
+        }
+      }
+    ],
     "img": [
       {
         "alt": "img1",
@@ -134,13 +165,6 @@
         "alt": "img2",
         "path": "/portfolio/images/test.jpg"
       }
-    ],
-    "font": {
-      "family": "area-variable",
-      "INKT": 100,
-      "slnt": 0,
-      "wdth": 100,
-      "wght": 500
-    }
+    ]
   }
 ]

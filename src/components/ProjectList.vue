@@ -23,10 +23,10 @@ function showProject(id) {
 <template>
   <a @click="showProject(project.id)" class="details">
     <div class="image-container">
-      <img :src="project.img.path" :alt="project.img.alt" class="project-image" />
+      <img :src="project.img[0].path" :alt="project.img[0].alt" class="project-image" />
     </div>
-    <h5>{{ project.date }}</h5>
-    <h4>{{ project.title }}</h4>
+    <h5>{{ project.text[0].date }}</h5>
+    <h4>{{ project.text[0].title }}</h4>
   </a>
 </template>
 
