@@ -7,7 +7,7 @@ import App from './App.vue'
 import router from './router'
 
 import TextNodeStyler from './plugins/TextNodeStyler'
-// import hoverEffectPlugin from './plugins/hoverEffectPlugin'
+import HeadingWrapper from './plugins/HeadingWrapper'
 
 const app = createApp(App)
 
@@ -15,6 +15,6 @@ app.use(createPinia())
 app.use(router)
 
 app.use(TextNodeStyler)
-// app.use(hoverEffectPlugin)
+app.use(HeadingWrapper)
 
 app.mount('#app')

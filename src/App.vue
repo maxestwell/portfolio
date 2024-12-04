@@ -4,7 +4,7 @@ import maxiswell from './components/maxiswell.vue'
 </script>
 
 <template>
-  <div class="everything-container" v-style-text-nodes>
+  <div class="everything-container" v-text-node-styler>
     <header>
       <maxiswell />
     </header>

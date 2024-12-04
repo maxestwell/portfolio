@@ -25,7 +25,7 @@ const fontStyle = computed(() => {
 </script>
 
 <template>
-  <div v-if="project" class="project-container">
+  <div v-if="project" class="project-container" v-heading-wrapper>
     <div class="project-images">
       <img
         v-for="image in project.img"

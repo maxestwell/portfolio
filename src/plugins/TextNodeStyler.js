@@ -1,8 +1,10 @@
 export default {
   install(app) {
-    app.directive('style-text-nodes', {
+    app.directive('text-node-styler', {
       mounted(el, binding) {
-        // Utility: Get all text nodes within an element
+        const semanticTags = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'P'] // Add more semantic tags as needed
+
+        // Function to get all text nodes in the element
         const getAllTextNodes = (root) => {
           const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false)
           const textNodes = []
@@ -17,89 +19,63 @@ export default {
           return textNodes
         }
 
-        const processedNodes = new Set() // To avoid re-wrapping
-        const processedParents = new Set() // To avoid reapplying parent classes
+        const processedParents = new Set() // Track processed parents to avoid re-applying styles
 
-        // Function: Wrap Words in a div (for headings only)
-        const wrapWordsInHeadings = (node) => {
-          const parent = node.parentNode
-
-          if (
-            parent &&
-            !processedNodes.has(node) &&
-            ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(parent.tagName)
-          ) {
-            processedNodes.add(node)
-
-            // Split the text into words, preserving spaces
-            const words = node.nodeValue.split(/(\s+)/)
-
-            // Create a DocumentFragment for the new content
-            const fragment = document.createDocumentFragment()
-
-            words.forEach((word) => {
-              if (word.trim() === '') {
-                // Preserve spaces
-                fragment.appendChild(document.createTextNode(word))
-              } else {
-                // Wrap word in a div
-                const div = document.createElement('div')
-                div.textContent = word
-                fragment.appendChild(div)
-              }
-            })
-
-            // Replace the text node with the new content
-            parent.replaceChild(fragment, node)
-          }
-        }
-
-        // Function: Wrap Entire Text Node in div (default behavior)
-        const wrapTextNodes = (node) => {
-          const parent = node.parentNode
-
-          if (
-            parent &&
-            !processedNodes.has(node) &&
-            !['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(parent.tagName) &&
-            !parent.classList.contains('text-node-ignore')
-          ) {
-            processedNodes.add(node)
-
-            // Add a class to the parent
-            if (!processedParents.has(parent)) {
-              parent.classList.add('text-node-parent')
-              processedParents.add(parent)
+        // Function to find the nearest semantic parent for a given text node
+        const findNearestSemanticParent = (node) => {
+          let parent = node.parentElement
+          while (parent && !semanticTags.includes(parent.tagName) && parent !== el) {
+            if (parent.classList.contains('message-container')) {
+              return null
             }
-
-            // Wrap the text node in a div
-            const div = document.createElement('div')
-            div.classList.add('text-node-div')
-            parent.replaceChild(div, node)
-            div.appendChild(node)
+            parent = parent.parentElement
           }
+          return parent
         }
 
-        // Main Function: Apply Wrapping Logic
-        const processNodes = (root) => {
+        // Function to apply styles to the nearest semantic parent of each text node
+        const styleTextNodes = (root) => {
           const textNodes = getAllTextNodes(root)
           textNodes.forEach((node) => {
-            // Apply word wrapping for headings
-            if (['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(node.parentNode.tagName)) {
-              wrapWordsInHeadings(node)
-            } else {
-              // Apply standard text node wrapping for others
-              wrapTextNodes(node)
+            const parent = findNearestSemanticParent(node)
+            if (
+              parent &&
+              !processedParents.has(parent) &&
+              !parent.classList.contains('text-node-ignore')
+            ) {
+              processedParents.add(parent)
+              parent.classList.add('text-node-parent')
+
+              // Create a span element
+              const span = document.createElement('span')
+              span.classList.add('text-node-span') // Add class to the span
+
+              // Move all child elements of the parent into the span
+              while (parent.firstChild) {
+                span.appendChild(parent.firstChild)
+              }
+
+              // Append the span to the parent
+              parent.appendChild(span)
             }
           })
         }
 
-        // Initial Pass
-        processNodes(el)
+        // Initial pass to style the text nodes
+        styleTextNodes(el)
 
-        // Set up a MutationObserver for dynamic content
+        // Notify that styling is done
+        if (binding.value && typeof binding.value === 'function') {
+          binding.value()
+        }
+
+        // Set up a Mutation Observer to handle dynamic content
         const observer = new MutationObserver(() => {
-          processNodes(el)
+          styleTextNodes(el)
+          // Notify that styling is done
+          if (binding.value && typeof binding.value === 'function') {
+            binding.value()
+          }
         })
 
         observer.observe(el, { childList: true, subtree: true })
