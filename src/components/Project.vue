@@ -78,6 +78,10 @@ const fontStyle = computed(() => {
   align-self: flex-start;
 }
 
+h1 {
+  width: min-content;
+}
+
 /* h3 {
   margin-top: 10px;
 }

@@ -1,6 +1,6 @@
 export default {
   install(app) {
-    app.directive('style-text-nodes', {
+    app.directive('wrap-words', {
       mounted(el, binding) {
         // Utility: Get all text nodes within an element
         const getAllTextNodes = (root) => {
@@ -20,7 +20,7 @@ export default {
         const processedNodes = new Set() // To avoid re-wrapping
         const processedParents = new Set() // To avoid reapplying parent classes
 
-        // Function: Wrap Words in a div (for headings only)
+        // Function: Wrap Words in a Span (for headings only)
         const wrapWordsInHeadings = (node) => {
           const parent = node.parentNode
 
@@ -42,10 +42,11 @@ export default {
                 // Preserve spaces
                 fragment.appendChild(document.createTextNode(word))
               } else {
-                // Wrap word in a div
-                const div = document.createElement('div')
-                div.textContent = word
-                fragment.appendChild(div)
+                // Wrap word in a span
+                const span = document.createElement('span')
+                span.classList.add('word-wrapper') // Add class for styling
+                span.textContent = word
+                fragment.appendChild(span)
               }
             })
 
@@ -54,7 +55,7 @@ export default {
           }
         }
 
-        // Function: Wrap Entire Text Node in div (default behavior)
+        // Function: Wrap Entire Text Node in Span (default behavior)
         const wrapTextNodes = (node) => {
           const parent = node.parentNode
 
@@ -72,11 +73,11 @@ export default {
               processedParents.add(parent)
             }
 
-            // Wrap the text node in a div
-            const div = document.createElement('div')
-            div.classList.add('text-node-div')
-            parent.replaceChild(div, node)
-            div.appendChild(node)
+            // Wrap the text node in a span
+            const span = document.createElement('span')
+            span.classList.add('text-node-span')
+            parent.replaceChild(span, node)
+            span.appendChild(node)
           }
         }
 
@@ -85,12 +86,10 @@ export default {
           const textNodes = getAllTextNodes(root)
           textNodes.forEach((node) => {
             // Apply word wrapping for headings
-            if (['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(node.parentNode.tagName)) {
-              wrapWordsInHeadings(node)
-            } else {
-              // Apply standard text node wrapping for others
-              wrapTextNodes(node)
-            }
+            wrapWordsInHeadings(node)
+
+            // Apply standard text node wrapping for others
+            wrapTextNodes(node)
           })
         }
 
