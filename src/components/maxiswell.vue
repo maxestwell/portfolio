@@ -153,6 +153,6 @@ function handleClick(word) {
 h1 {
   background-color: var(--vt-c-blue) !important;
   color: var(--vt-c-white);
-  padding: 0 0.3em;
+  padding: 0 3%;
 }
 </style>
