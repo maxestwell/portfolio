@@ -36,7 +36,7 @@ function showProject(id) {
         class="project-gif"
       />
     </div>
-    <h6 class="date">{{ project.text[0].date }}</h6>
+
     <h4>{{ project.text[0].title }}</h4>
   </a>
 </template>
