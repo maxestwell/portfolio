@@ -26,20 +26,42 @@ const fontStyle = computed(() => {
 
 <template>
   <div v-if="project" class="project-container" v-heading-wrapper>
-    <div class="project-images">
-      <img
-        v-for="image in project.img"
-        :key="image.path"
-        :src="image.path"
-        :alt="image.alt"
-        class="project-image"
-      />
+    <div class="project-media-container">
+      <div v-for="media in project.media" :key="media.path" class="project-media">
+        <img
+          v-if="media.type === 'image'"
+          :src="media.path"
+          :alt="media.alt"
+          class="project-image"
+        />
+        <img
+          v-else-if="media.type === 'gif'"
+          :src="media.path"
+          :alt="media.alt"
+          class="project-gif"
+        />
+        <video
+          v-else-if="media.type === 'video'"
+          :src="media.path"
+          :alt="media.alt"
+          class="project-video"
+          controls
+        ></video>
+      </div>
     </div>
     <div class="project-text">
-      <h1 :style="fontStyle">{{ project.text[0].title }}</h1>
-      <h2>{{ project.text[0].subtitle }}</h2>
-      <p>{{ project.text[0].date }}</p>
-      <p>{{ project.text[0].description }}</p>
+      <div class="text-h1">
+        <h1 :style="fontStyle">{{ project.text[0].title }}</h1>
+      </div>
+      <div class="text-h4">
+        <h3 class="heading-wrapper-ignore">{{ project.text[0].subtitle }}</h3>
+      </div>
+      <div class="text-p">
+        <h6 class="date">{{ project.text[0].date }}</h6>
+      </div>
+      <div class="text-p">
+        <p>{{ project.text[0].description }}</p>
+      </div>
     </div>
   </div>
   <div v-else>
@@ -53,7 +75,7 @@ const fontStyle = computed(() => {
   gap: 1rem;
 }
 
-.project-images {
+.project-media-container {
   width: 100%;
   flex: 2;
   display: flex;
@@ -64,8 +86,17 @@ const fontStyle = computed(() => {
   gap: 1rem;
 }
 
-.project-image {
-  /* flex: 2 2 auto; */
+.project-media {
+  line-height: 0;
+}
+
+/* .project-media img {
+  vertical-align: bottom;
+} */
+
+.project-image,
+.project-gif,
+.project-video {
   width: 100%;
   height: fit-content;
   object-fit: cover;
@@ -78,15 +109,15 @@ const fontStyle = computed(() => {
   align-self: flex-start;
 }
 
-h1 {
-  width: min-content;
+.text-h1,
+.text-h4,
+.text-p {
+  padding-bottom: 1em;
 }
 
-/* h3 {
-  margin-top: 10px;
-}
-
+h1,
+h4,
 p {
-  margin-top: 5px;
-} */
+  background-color: transparent !important;
+}
 </style>

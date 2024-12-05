@@ -21,11 +21,20 @@ export default {
 
         const processedParents = new Set() // Track processed parents to avoid re-applying styles
 
+        // Function to determine if a parent or span should be ignored
+        const shouldIgnore = (element) => {
+          return (
+            element &&
+            (element.classList.contains('message-container') ||
+              element.classList.contains('text-node-ignore'))
+          )
+        }
+
         // Function to find the nearest semantic parent for a given text node
         const findNearestSemanticParent = (node) => {
           let parent = node.parentElement
           while (parent && !semanticTags.includes(parent.tagName) && parent !== el) {
-            if (parent.classList.contains('message-container')) {
+            if (shouldIgnore(parent)) {
               return null
             }
             parent = parent.parentElement
@@ -38,11 +47,7 @@ export default {
           const textNodes = getAllTextNodes(root)
           textNodes.forEach((node) => {
             const parent = findNearestSemanticParent(node)
-            if (
-              parent &&
-              !processedParents.has(parent) &&
-              !parent.classList.contains('text-node-ignore')
-            ) {
+            if (parent && !processedParents.has(parent) && !shouldIgnore(parent)) {
               processedParents.add(parent)
               parent.classList.add('text-node-parent')
 

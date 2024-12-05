@@ -23,23 +23,32 @@ function showProject(id) {
 <template>
   <a @click="showProject(project.id)" class="details">
     <div class="image-container">
-      <img :src="project.img[0].path" :alt="project.img[0].alt" class="project-image" />
+      <img
+        v-if="project.media[0].type === 'image'"
+        :src="project.media[0].path"
+        :alt="project.media[0].alt"
+        class="project-image"
+      />
+      <img
+        v-else-if="project.media[0].type === 'gif'"
+        :src="project.media[0].path"
+        :alt="project.media[0].alt"
+        class="project-gif"
+      />
     </div>
-    <h5>{{ project.text[0].date }}</h5>
+    <h6 class="date">{{ project.text[0].date }}</h6>
     <h4>{{ project.text[0].title }}</h4>
   </a>
 </template>
 
 <style scoped>
 .details {
-  background-color: #ccc;
-
+  /* background-color: var(--vt-c-gray); */
   width: 100%;
   display: grid;
   grid: auto-flow / 1fr 4fr;
   gap: 1rem;
   align-items: end;
-  /* outline: 1px solid red; */
 }
 
 .image-container {
@@ -48,9 +57,10 @@ function showProject(id) {
   position: relative;
 }
 
-.project-image {
-  /* background-color: #ccc; */
-  padding: 1rem;
+.project-image,
+.project-gif,
+.project-video {
+  border: 1rem solid var(--vt-c-yellow);
   position: absolute;
   top: 0;
   left: 0;
@@ -60,7 +70,7 @@ function showProject(id) {
   overflow: hidden;
 }
 
-h5 {
+.date {
   position: absolute;
 }
 </style>

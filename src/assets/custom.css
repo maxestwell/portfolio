@@ -7,8 +7,10 @@
   --vt-c-black-soft: #222222;
   --vt-c-black-mute: #282828;
 
-  --vt-c-indigo: #2c3e50;
-  --vt-c-yellow: #ffc033;
+  --vt-c-yellow: #ffcc33;
+  --vt-c-blue: #0033ff;
+  --vt-c-red: #cc3300;
+  --vt-c-gray: #cccccc;
 
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);

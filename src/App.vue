@@ -10,7 +10,7 @@ import maxiswell from './components/maxiswell.vue'
     </header>
     <RouterView class="everything" />
     <footer>
-      <p class="text-node-ignore">my name is max, i like design and music woohoo</p>
+      <p><i>my name is max, i like design and music woohoo</i></p>
     </footer>
   </div>
 </template>
@@ -27,18 +27,22 @@ import maxiswell from './components/maxiswell.vue'
 /* .everything-container,
 .everything {
   padding: 1rem;
-  outline: 1px solid red;
+  outline: 1px solid var(--vt-c-red);
 } */
 
 .everything {
   flex-grow: 1;
   margin: 1rem;
-  outline: 1px solid red;
+  outline: 1px solid var(--vt-c-red);
 }
 
 header {
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+p {
+  background-color: transparent !important;
 }
 </style>

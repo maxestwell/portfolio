@@ -4,9 +4,9 @@
     "text": [
       {
         "title": "Hand Tracking Synth",
-        "subtitle": "CD packaging design",
+        "subtitle": "Cycling '74 Max",
         "date": "04/24",
-        "description": "Cycling '74",
+        "description": "Experimented with hand tracking in Max to create a virtual synthesiser. The user can control the waveform and pitch of the synth by moving their hand up and down. The synth is built in Max and uses Google's MediaPipe for hand tracking.",
         "font": {
           "family": "area-variable",
           "INKT": 100,
@@ -16,14 +16,16 @@
         }
       }
     ],
-    "img": [
+    "media": [
       {
+        "type": "image",
         "alt": "hand tracking synth mockup",
-        "path": "/portfolio/images/hand-tracking-synth-mockup.jpg"
+        "path": "/portfolio/media/hand-tracking-synth-mockup.jpg"
       },
       {
-        "alt": "hand tracking synth mockup",
-        "path": "/portfolio/images/hand-tracking-synth-mockup.jpg"
+        "type": "gif",
+        "alt": "hand tracking synth animation",
+        "path": "/portfolio/media/cycling-74-max-edit-mode.gif"
       }
     ]
   },
@@ -31,10 +33,10 @@
     "id": 1,
     "text": [
       {
-        "title": "Tellus",
-        "subtitle": "CD packaging design",
+        "title": "Tellus publication",
+        "subtitle": "Would you rather publication website",
         "date": "10/24",
-        "description": "waaaaahhhhh",
+        "description": "Tellus began as an idea pitched by a University of Canberra academic during a study tour in Finland as part of a group university project. The idea stuck with me... It evolved into a curated audio archive of micro-interviews based on the 'Would you rather…?' concept, blending creativity and public engagement. The platform invites users to share their own responses for future editions, drawing on the Vox Pop tradition to explore a mix of thought-provoking, lighthearted, and reflective questions.",
         "font": {
           "family": "area-variable",
           "INKT": 100,
@@ -44,14 +46,16 @@
         }
       }
     ],
-    "img": [
+    "media": [
       {
-        "alt": "img1",
-        "path": "/portfolio/images/test.jpg"
+        "type": "image",
+        "alt": "tellus homepage",
+        "path": "/portfolio/media/tellus-home.jpg"
       },
       {
-        "alt": "img2",
-        "path": "/portfolio/images/test.jpg"
+        "type": "image",
+        "alt": "tellus playing",
+        "path": "/portfolio/media/tellus-playing.jpg"
       }
     ]
   },
@@ -60,7 +64,7 @@
     "text": [
       {
         "title": "IxD Zine",
-        "subtitle": "CD packaging design",
+        "subtitle": "UC Interaction Design zine",
         "date": "11/23",
         "description": "uhoh",
         "font": {
@@ -72,14 +76,21 @@
         }
       }
     ],
-    "img": [
+    "media": [
       {
+        "type": "image",
         "alt": "ixd zine mockup",
-        "path": "/portfolio/images/ixd-zine-mockup.jpg"
+        "path": "/portfolio/media/ixd-zine-mockup.jpg"
       },
       {
-        "alt": "ixd zine mockup",
-        "path": "/portfolio/images/ixd-zine-mockup.jpg"
+        "type": "image",
+        "alt": "ixd zine layout front",
+        "path": "/portfolio/media/ixd-zine-layout-front.jpg"
+      },
+      {
+        "type": "image",
+        "alt": "ixd zine layout back",
+        "path": "/portfolio/media/ixd-zine-layout-back.jpg"
       }
     ]
   },
@@ -100,14 +111,21 @@
         }
       }
     ],
-    "img": [
+    "media": [
       {
+        "type": "image",
         "alt": "cd packaging mockup",
-        "path": "/portfolio/images/cd-packaging-mockup.jpg"
+        "path": "/portfolio/media/cd-package-mockup.jpg"
       },
       {
-        "alt": "cd packaging mockup",
-        "path": "/portfolio/images/cd-packaging-mockup.jpg"
+        "type": "image",
+        "alt": "cd packaging front cover",
+        "path": "/portfolio/media/cd-package-front.jpg"
+      },
+      {
+        "type": "image",
+        "alt": "cd packaging back cover",
+        "path": "/portfolio/media/cd-package-back.jpg"
       }
     ]
   },
@@ -128,14 +146,11 @@
         }
       }
     ],
-    "img": [
+    "media": [
       {
+        "type": "image",
         "alt": "personal website mockup",
-        "path": "/portfolio/images/personal-website-mockup.jpg"
-      },
-      {
-        "alt": "personal website mockup",
-        "path": "/portfolio/images/personal-website-mockup.jpg"
+        "path": "/portfolio/media/personal-website-mockup.jpg"
       }
     ]
   },
@@ -156,14 +171,16 @@
         }
       }
     ],
-    "img": [
+    "media": [
       {
+        "type": "image",
         "alt": "img1",
-        "path": "/portfolio/images/test.jpg"
+        "path": "/portfolio/media/test.jpg"
       },
       {
+        "type": "image",
         "alt": "img2",
-        "path": "/portfolio/images/test.jpg"
+        "path": "/portfolio/media/test.jpg"
       }
     ]
   }

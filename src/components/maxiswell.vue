@@ -66,26 +66,35 @@ function handleClick(word) {
 
 <template>
   <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
-  <RouterLink to="/" class="heading">
-    <HoverEffect
-      defaultSettings="'INKT' 100, 'slnt' 0, 'wdth' 100, 'wght' 500"
-      hoverSettings="'INKT' 100, 'slnt' -10, 'wdth' 200, 'wght' 900"
-    >
-      <h1 ref="textElement" @click="handleClick('max')">max</h1>
-    </HoverEffect>
-    <HoverEffect
-      defaultSettings="'INKT' 100, 'slnt' 0, 'wdth' 100, 'wght' 500"
-      hoverSettings="'INKT' 100, 'slnt' -10, 'wdth' 200, 'wght' 900"
-    >
-      <h1 @click="handleClick('is')">is</h1>
-    </HoverEffect>
-    <HoverEffect
-      defaultSettings="'INKT' 100, 'slnt' 0, 'wdth' 100, 'wght' 500"
-      hoverSettings="'INKT' 100, 'slnt' -10, 'wdth' 200, 'wght' 900"
-    >
-      <h1 @click="handleClick('well')">well</h1>
-    </HoverEffect>
-  </RouterLink>
+  <div class="heading">
+    <RouterLink to="/">
+      <HoverEffect
+        defaultSettings="'INKT' 100, 'slnt' 0, 'wdth' 100, 'wght' 500"
+        hoverSettings="'INKT' 100, 'slnt' -10, 'wdth' 200, 'wght' 900"
+      >
+        <h1 ref="textElement" @click="handleClick('max')">max</h1>
+      </HoverEffect>
+    </RouterLink>
+    <!-- &nbsp;&nbsp; -->
+    <RouterLink to="/">
+      <HoverEffect
+        defaultSettings="'INKT' 100, 'slnt' 0, 'wdth' 100, 'wght' 500"
+        hoverSettings="'INKT' 100, 'slnt' -10, 'wdth' 200, 'wght' 900"
+      >
+        <h1 @click="handleClick('is')">is</h1>
+      </HoverEffect>
+    </RouterLink>
+    <!-- &nbsp;&nbsp; -->
+    <RouterLink to="/">
+      <HoverEffect
+        defaultSettings="'INKT' 100, 'slnt' 0, 'wdth' 100, 'wght' 500"
+        hoverSettings="'INKT' 100, 'slnt' -10, 'wdth' 200, 'wght' 900"
+      >
+        <h1 @click="handleClick('well')">well</h1>
+      </HoverEffect>
+    </RouterLink>
+  </div>
+
   <div
     v-if="state.showMessage"
     class="message-container text-node-ignore"
@@ -96,7 +105,9 @@ function handleClick(word) {
     }"
   >
     <Logo class="logo" />
-    <div class="text-overlay">{{ state.currentMessage }}</div>
+    <h4 class="text-overlay text-node-ignore">
+      <i>{{ state.currentMessage }}</i>
+    </h4>
   </div>
 </template>
 
@@ -122,19 +133,14 @@ function handleClick(word) {
 }
 
 .text-overlay {
-  font-size: 1rem;
+  /* font-size: 1rem; */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
   text-align: center;
-  font-variation-settings:
-    'INKT' 100,
-    'slnt' -10,
-    'wdth' 100,
-    'wght' 700;
-  text-transform: none;
+  color: var(--vt-c-white);
+  background-color: transparent !important;
 }
 
 .logo {
@@ -142,5 +148,11 @@ function handleClick(word) {
   stroke-width: 0;
   width: 6em;
   height: 6em;
+}
+
+h1 {
+  background-color: var(--vt-c-blue) !important;
+  color: var(--vt-c-white);
+  padding: 0 0.3em;
 }
 </style>

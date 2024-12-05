@@ -2,7 +2,12 @@ export default {
   install(app) {
     app.directive('heading-wrapper', {
       mounted(el) {
-        const semanticTags = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'] // Headings tags to target
+        const semanticTags = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'] // Heading tags to target
+
+        // Function to determine if an element should be ignored
+        const shouldIgnore = (element) => {
+          return element && element.classList.contains('heading-wrapper-ignore')
+        }
 
         // Function to get all text nodes within a root element
         const getAllTextNodes = (root) => {
@@ -19,12 +24,13 @@ export default {
           return textNodes
         }
 
-        // Function to wrap each word in a span and replace the heading
+        // Function to wrap each word in a new heading tag and replace the original heading
         const wrapWordsInHeadings = (root) => {
           const textNodes = getAllTextNodes(root)
           textNodes.forEach((node) => {
             const parent = node.parentNode
-            if (parent && semanticTags.includes(parent.tagName)) {
+
+            if (parent && semanticTags.includes(parent.tagName) && !shouldIgnore(parent)) {
               // Split the text content into words
               const words = node.nodeValue.split(/\s+/)
 
@@ -35,14 +41,7 @@ export default {
               words.forEach((word) => {
                 // Create a new heading element (same type as the original parent)
                 const newHeading = document.createElement(parent.tagName.toLowerCase())
-
-                // Create a span element for the word
-                const span = document.createElement('span')
-                // span.classList.add('word-wrapper') // Add class for styling
-                span.textContent = word
-
-                // Append the span to the new heading
-                newHeading.appendChild(span)
+                newHeading.textContent = word // Set the word as the content of the new heading
 
                 // Append the new heading to the fragment
                 fragment.appendChild(newHeading)

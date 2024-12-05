@@ -13,7 +13,7 @@
     'slnt' 0,
     'wdth' 100,
     'wght' 500;
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
 }
 
 .text-node-span {
@@ -24,14 +24,14 @@
 }
 
 .text-node-parent {
-  background-color: #ccc;
+  background-color: var(--vt-c-gray);
   height: fit-content;
   width: fit-content;
-  line-height: 1.2;
+  /* line-height: 1.2; */
 }
 
 /* ::target-text {
-  background-color: red;
+  background-color: var(--vt-c-red);
   color: white;
 } */
 
@@ -53,7 +53,7 @@ a,
 
 @media (hover: hover) {
   a:hover {
-    background-color: #ffc033 !important;
+    background-color: var(--vt-c-yellow) !important;
   }
 }
 
@@ -61,30 +61,70 @@ a,
 
 h1 {
   font-size: 2.5rem;
+  font-variation-settings: inherit;
 }
 
 h2 {
   font-size: 2rem;
+  font-variation-settings:
+    'INKT' 100,
+    'slnt' 0,
+    'wdth' 100,
+    'wght' 500;
 }
 
 h3 {
   font-size: 1.5rem;
+  font-variation-settings:
+    'INKT' 100,
+    'slnt' 0,
+    'wdth' 100,
+    'wght' 600;
 }
 
 h4 {
   font-size: 1.25rem;
+  font-variation-settings:
+    'INKT' 100,
+    'slnt' 0,
+    'wdth' 100,
+    'wght' 600;
 }
 
 h5 {
   font-size: 1rem;
+  font-variation-settings:
+    'INKT' 100,
+    'slnt' 0,
+    'wdth' 100,
+    'wght' 600;
 }
 
 h6 {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  font-variation-settings:
+    'INKT' 100,
+    'slnt' 0,
+    'wdth' 100,
+    'wght' 600;
+}
+
+.date {
+  color: var(--vt-c-text-light-3);
 }
 
 p {
   font-size: 1rem;
+  font-variation-settings:
+    'INKT' 0,
+    'slnt' 0,
+    'wdth' 100,
+    'wght' 400;
+}
+
+i {
+  font-style: normal;
+  font-variation-settings: 'slnt' -10;
 }
 
 ul {
