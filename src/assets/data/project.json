@@ -6,7 +6,11 @@
         "title": "Hand Tracking Synth",
         "subtitle": "Cycling '74 Max",
         "date": "04/24",
-        "description": "Experimented with hand tracking in Max to create a virtual synthesiser. The user can control the waveform and pitch of the synth by moving their hand up and down. The synth is built in Max and uses Google's MediaPipe for hand tracking.",
+        "description": [
+          "Experimented with hand tracking in Max to create a virtual synthesiser.",
+          "The user can control the waveform and pitch of the synth by moving their hand up and down.",
+          "The synth is built in Max and uses Google's MediaPipe for hand tracking."
+        ],
         "font": {
           "family": "area-variable",
           "INKT": 100,
@@ -36,7 +40,11 @@
         "title": "Tellus publication",
         "subtitle": "Would you rather publication website",
         "date": "10/24",
-        "description": "Tellus began as an idea pitched by a University of Canberra academic during a study tour in Finland as part of a group university project. The idea stuck with me... It evolved into a curated audio archive of micro-interviews based on the 'Would you rather…?' concept, blending creativity and public engagement. The platform invites users to share their own responses for future editions, drawing on the Vox Pop tradition to explore a mix of thought-provoking, lighthearted, and reflective questions.",
+        "description": [
+          "Tellus began as an idea pitched by a University of Canberra academic during a study tour in Finland as part of a group university project.",
+          "The idea stuck with me...",
+          "It evolved into a curated audio archive of micro-interviews based on the 'Would you rather…?' concept."
+        ],
         "font": {
           "family": "area-variable",
           "INKT": 100,
@@ -66,7 +74,10 @@
         "title": "IxD Zine",
         "subtitle": "UC Interaction Design zine",
         "date": "11/23",
-        "description": "I was tasked to design, mock-up and produce a small run of short hard-copy printed zinestyle booklets to showcase the UC student experience as an orientation tool for the Design Degree. I decided to showcase the Bachelor of Design (Interaction Design) Degree.",
+        "description": [
+          "I was tasked to design, mock-up and produce a small run of short hard-copy printed zine style booklets to showcase the UC student experience as an orientation tool for the Design Degree.",
+          "I decided to showcase the Bachelor of Design (Interaction Design) Degree."
+        ],
         "font": {
           "family": "area-variable",
           "INKT": 100,
@@ -101,7 +112,11 @@
         "title": "WHY ARE MY FRIENDS BLUE?",
         "subtitle": "CD packaging design",
         "date": "11/20",
-        "description": "Designed a custom cd/vinyl package for my (maxiswell) album "Why Are My Friends Blue?". During 2020, I spent a lot of time stuck in my room (for obvious reasons), watching the sun rise and set. Inevitably this has influenced my design and music.",
+        "description": [
+          "Designed a custom cd/vinyl package for my (maxiswell) album \"Why Are My Friends Blue?\".",
+          "During 2020, I spent a lot of time stuck in my room (for obvious reasons), watching the sun rise and set.",
+          "Inevitably this has influenced my design and music."
+        ],
         "font": {
           "family": "area-variable",
           "INKT": 100,
@@ -136,7 +151,12 @@
         "title": "Personal Website",
         "subtitle": "Portfolio",
         "date": "04/23",
-        "description": "eeeee",
+        "description": [
+          "description-p1",
+          "description-p2",
+          "description-p3",
+          "description-p4"
+        ],
         "font": {
           "family": "area-variable",
           "INKT": 100,
@@ -161,7 +181,11 @@
         "title": "title",
         "subtitle": "subtitle",
         "date": "00/00",
-        "description": "description",
+        "description": [
+          "description-p1",
+          "description-p2",
+          "description-p3"
+        ],
         "font": {
           "family": "area-variable",
           "INKT": 100,

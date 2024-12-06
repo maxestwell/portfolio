@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { ref, watch, computed } from 'vue'
 import projectsData from '@/assets/data/project.json'
 
 const props = defineProps({
@@ -9,10 +9,18 @@ const props = defineProps({
   },
 })
 
-const project = computed(() => projectsData.find((p) => p.id === Number(props.projectId)))
+const project = ref(null)
+
+watch(
+  () => props.projectId,
+  (newId) => {
+    project.value = projectsData.find((p) => p.id === Number(newId))
+  },
+  { immediate: true },
+)
 
 const fontStyle = computed(() => {
-  if (!project.value || !project.value.text[0].font) return {}
+  if (!project.value?.text?.[0]?.font) return { fontFamily: 'sans-serif' }
   const { family, ...variations } = project.value.text[0].font
   const fontVariationSettings = Object.entries(variations)
     .map(([key, value]) => `'${key}' ${value}`)
@@ -22,50 +30,50 @@ const fontStyle = computed(() => {
     fontVariationSettings,
   }
 })
+
+const getMediaType = (type) => {
+  const mediaMap = {
+    image: 'img',
+    gif: 'img',
+    video: 'video',
+  }
+  return mediaMap[type] || 'div' // Fallback
+}
 </script>
 
 <template>
   <div v-if="project" class="project-container" v-heading-wrapper>
     <div class="project-media-container">
       <div v-for="media in project.media" :key="media.path" class="project-media">
-        <img
-          v-if="media.type === 'image'"
+        <component
+          :is="getMediaType(media.type)"
           :src="media.path"
           :alt="media.alt"
-          class="project-image"
+          v-bind="media.type === 'video' ? { controls: true } : {}"
+          class="project-type"
         />
-        <img
-          v-else-if="media.type === 'gif'"
-          :src="media.path"
-          :alt="media.alt"
-          class="project-gif"
-        />
-        <video
-          v-else-if="media.type === 'video'"
-          :src="media.path"
-          :alt="media.alt"
-          class="project-video"
-          controls
-        ></video>
       </div>
     </div>
     <div class="project-text">
       <div class="text-h1">
         <h1 :style="fontStyle">{{ project.text[0].title }}</h1>
       </div>
-      <div class="text-h4">
+      <div class="text-h3">
         <h3 class="heading-wrapper-ignore">{{ project.text[0].subtitle }}</h3>
       </div>
-      <div class="text-p">
+      <div class="text-h6">
         <h6 class="date">{{ project.text[0].date }}</h6>
       </div>
       <div class="text-p">
-        <p>{{ project.text[0].description }}</p>
+        <p v-for="(paragraph, index) in project.text[0].description" :key="index">
+          {{ paragraph }}
+        </p>
       </div>
     </div>
   </div>
   <div v-else>
-    <p>Project not found.</p>
+    <p>Project not found. Please check the project ID.</p>
+    <router-link to="/">Return to home</router-link>
   </div>
 </template>
 
@@ -94,9 +102,7 @@ const fontStyle = computed(() => {
   vertical-align: bottom;
 } */
 
-.project-image,
-.project-gif,
-.project-video {
+.project-type {
   width: 100%;
   height: fit-content;
   object-fit: cover;
@@ -110,13 +116,14 @@ const fontStyle = computed(() => {
 }
 
 .text-h1,
-.text-h4,
+.text-h3,
+.text-h6,
 .text-p {
   padding-bottom: 1em;
 }
 
 h1,
-h4,
+h3,
 p {
   background-color: transparent !important;
 }
