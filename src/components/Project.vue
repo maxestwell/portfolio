@@ -42,7 +42,7 @@ const getMediaType = (type) => {
 </script>
 
 <template>
-  <div v-if="project" class="project-container" v-heading-wrapper>
+  <div v-if="project" class="project-container">
     <div class="project-media-container">
       <div v-for="media in project.media" :key="media.path" class="project-media">
         <component
@@ -54,17 +54,19 @@ const getMediaType = (type) => {
         />
       </div>
     </div>
-    <div class="project-text">
-      <div class="text-h1">
+    <div class="project-text-container">
+      <div class="project-text text-h1">
         <h1 :style="fontStyle">{{ project.text[0].title }}</h1>
       </div>
-      <div class="text-h3">
-        <h3 class="heading-wrapper-ignore">{{ project.text[0].subtitle }}</h3>
+      <div class="project-text text-h3">
+        <h3 class="heading-wrapper-ignore">
+          <i>{{ project.text[0].subtitle }}</i>
+        </h3>
       </div>
-      <div class="text-h6">
-        <h6 class="date">{{ project.text[0].date }}</h6>
+      <div class="project-text text-h6">
+        <h6 class="heading-wrapper-ignore">{{ project.text[0].date }}</h6>
       </div>
-      <div class="text-p">
+      <div class="project-text text-p">
         <p v-for="(paragraph, index) in project.text[0].description" :key="index">
           {{ paragraph }}
         </p>
@@ -80,7 +82,7 @@ const getMediaType = (type) => {
 <style scoped>
 .project-container {
   display: flex;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 
 .project-media-container {
@@ -96,6 +98,7 @@ const getMediaType = (type) => {
 
 .project-media {
   line-height: 0;
+  border: 1rem solid var(--vt-c-yellow);
 }
 
 /* .project-media img {
@@ -108,23 +111,27 @@ const getMediaType = (type) => {
   object-fit: cover;
 }
 
-.project-text {
+.project-text-container {
   flex: 1;
   position: sticky;
   top: 0;
   align-self: flex-start;
+  padding: 0rem 1rem 1rem 1rem;
 }
 
-.text-h1,
-.text-h3,
-.text-h6,
-.text-p {
+.project-text {
   padding-bottom: 1em;
 }
 
-h1,
-h3,
-p {
+.project-text > * {
   background-color: transparent !important;
+}
+
+p {
+  padding-bottom: 1em;
+}
+
+.text-p {
+  padding-bottom: 0em;
 }
 </style>

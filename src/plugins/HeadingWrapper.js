@@ -6,7 +6,11 @@ export default {
 
         // Function to determine if an element should be ignored
         const shouldIgnore = (element) => {
-          return element && element.classList.contains('heading-wrapper-ignore')
+          const ignore = element && element.classList.contains('heading-wrapper-ignore')
+          // console.log(
+          //   `Checking if element should be ignored: ${element.tagName}, ignore: ${ignore}`,
+          // )
+          return ignore
         }
 
         // Function to get all text nodes within a root element
@@ -31,6 +35,7 @@ export default {
             const parent = node.parentNode
 
             if (parent && semanticTags.includes(parent.tagName) && !shouldIgnore(parent)) {
+              // console.log(`Wrapping words in heading: ${parent.tagName}`)
               // Split the text content into words
               const words = node.nodeValue.split(/\s+/)
 
@@ -57,8 +62,12 @@ export default {
         wrapWordsInHeadings(el)
 
         // Set up a Mutation Observer for dynamic content
-        const observer = new MutationObserver(() => {
-          wrapWordsInHeadings(el)
+        const observer = new MutationObserver((mutationsList) => {
+          for (const mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+              wrapWordsInHeadings(el)
+            }
+          }
         })
 
         observer.observe(el, { childList: true, subtree: true })

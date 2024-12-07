@@ -9,20 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <Project :projectId="projectId" />
+  <Project :projectId="projectId" v-heading-wrapper />
 </template>
 
-<style scoped>
-.project-image {
-  width: 100%;
-  height: auto;
-}
-
-h3 {
-  margin-top: 10px;
-}
-
-p {
-  margin-top: 5px;
-}
-</style>
+<style scoped></style>

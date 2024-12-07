@@ -10,7 +10,7 @@ import maxiswell from './components/maxiswell.vue'
     </header>
     <RouterView class="everything" />
     <footer>
-      <p><i>my name is max, i like design and music woohoo</i></p>
+      <p><i>hi, my name is max. i like design and music. woohoo</i></p>
     </footer>
   </div>
 </template>

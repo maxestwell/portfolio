@@ -1,4 +1,5 @@
 @import './custom.css';
+@import './font.css';
 
 #app {
   min-height: 100vh;
@@ -7,12 +8,6 @@
   /* padding: 1rem; */
   display: flex;
   flex-direction: column;
-  font-family: 'area-variable', sans-serif;
-  font-variation-settings:
-    'INKT' 100,
-    'slnt' 0,
-    'wdth' 100,
-    'wght' 500;
   /* text-transform: lowercase; */
 }
 
@@ -59,72 +54,8 @@ a,
 
 /* text styling */
 
-h1 {
-  font-size: 2.5rem;
-  font-variation-settings: inherit;
-}
-
-h2 {
-  font-size: 2rem;
-  font-variation-settings:
-    'INKT' 100,
-    'slnt' 0,
-    'wdth' 100,
-    'wght' 500;
-}
-
-h3 {
-  font-size: 1.5rem;
-  font-variation-settings:
-    'INKT' 100,
-    'slnt' 0,
-    'wdth' 100,
-    'wght' 600;
-}
-
-h4 {
-  font-size: 1.25rem;
-  font-variation-settings:
-    'INKT' 100,
-    'slnt' 0,
-    'wdth' 100,
-    'wght' 600;
-}
-
-h5 {
-  font-size: 1rem;
-  font-variation-settings:
-    'INKT' 100,
-    'slnt' 0,
-    'wdth' 100,
-    'wght' 600;
-}
-
-h6 {
-  font-size: 0.75rem;
-  font-variation-settings:
-    'INKT' 100,
-    'slnt' 0,
-    'wdth' 100,
-    'wght' 600;
-}
-
 .date {
   color: var(--vt-c-text-light-3);
-}
-
-p {
-  font-size: 1rem;
-  font-variation-settings:
-    'INKT' 0,
-    'slnt' 0,
-    'wdth' 100,
-    'wght' 400;
-}
-
-i {
-  font-style: normal;
-  font-variation-settings: 'slnt' -10;
 }
 
 ul {
@@ -137,3 +68,38 @@ li {
 }
 
 /* end text styling */
+
+/* responsive design */
+
+/* Extra Small (Phones) */
+@media screen and (max-width: 480px) {
+  .details {
+    display: block !important;
+    /* Add other styles as needed */
+  }
+  .project-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem;
+  }
+}
+
+/* Small to Medium Screens (Phones and small tablets) */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  /* Styles for medium phones and small tablets */
+}
+
+/* Tablets in Portrait Mode */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Styles for tablets */
+}
+
+/* Tablets in Landscape Mode / Small Desktops */
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  /* Styles for tablets in landscape and small desktops */
+}
+
+/* Larger Desktops */
+@media screen and (min-width: 1281px) {
+  /* Styles for large desktops */
+}
