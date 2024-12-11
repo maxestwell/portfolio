@@ -98,7 +98,8 @@ const getMediaType = (type) => {
 
 .project-media {
   line-height: 0;
-  border: 1rem solid var(--vt-c-yellow);
+  padding: 1rem;
+  outline: 1px solid var(--vt-c-red);
 }
 
 /* .project-media img {
@@ -129,6 +130,10 @@ const getMediaType = (type) => {
 
 p {
   padding-bottom: 1em;
+}
+
+p:last-child {
+  padding-bottom: 0rem;
 }
 
 .text-p {

@@ -1,6 +1,5 @@
 <script setup>
 import { reactive } from 'vue'
-import HoverEffect from '@/components/HoverEffect.vue'
 import Logo from '@/components/icons/Logo.vue'
 
 const props = defineProps({
@@ -68,30 +67,15 @@ function handleClick(word) {
   <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
   <div class="heading">
     <RouterLink to="/">
-      <HoverEffect
-        defaultSettings="'INKT' 100, 'slnt' 0, 'wdth' 100, 'wght' 500"
-        hoverSettings="'INKT' 100, 'slnt' -10, 'wdth' 200, 'wght' 900"
-      >
-        <h1 ref="textElement" @click="handleClick('max')">max</h1>
-      </HoverEffect>
+      <h1 ref="textElement" @click="handleClick('max')">max</h1>
     </RouterLink>
     <!-- &nbsp;&nbsp; -->
     <RouterLink to="/">
-      <HoverEffect
-        defaultSettings="'INKT' 100, 'slnt' 0, 'wdth' 100, 'wght' 500"
-        hoverSettings="'INKT' 100, 'slnt' -10, 'wdth' 200, 'wght' 900"
-      >
-        <h1 @click="handleClick('is')">is</h1>
-      </HoverEffect>
+      <h1 @click="handleClick('is')">is</h1>
     </RouterLink>
     <!-- &nbsp;&nbsp; -->
     <RouterLink to="/">
-      <HoverEffect
-        defaultSettings="'INKT' 100, 'slnt' 0, 'wdth' 100, 'wght' 500"
-        hoverSettings="'INKT' 100, 'slnt' -10, 'wdth' 200, 'wght' 900"
-      >
-        <h1 @click="handleClick('well')">well</h1>
-      </HoverEffect>
+      <h1 @click="handleClick('well')">well</h1>
     </RouterLink>
   </div>
 
@@ -105,13 +89,32 @@ function handleClick(word) {
     }"
   >
     <Logo class="logo" />
-    <h4 class="text-overlay text-node-ignore">
+    <h6 class="text-overlay text-node-ignore">
       <i>{{ state.currentMessage }}</i>
-    </h4>
+    </h6>
   </div>
 </template>
 
 <style scoped>
+h1 {
+  background-color: var(--vt-c-blue) !important;
+  color: var(--vt-c-white);
+  padding: 0rem 1rem;
+  transition:
+    font-variation-settings 0.3s ease,
+    --font-slnt,
+    --font-wdth,
+    --font-wght,
+    padding 0.3s ease;
+}
+
+h1:hover {
+  --font-slnt: -10;
+  --font-wdth: 200;
+  --font-wght: 900;
+  padding: 0rem 0rem;
+}
+
 @media (hover: hover) {
   a:hover {
     background-color: transparent !important;
@@ -133,7 +136,6 @@ function handleClick(word) {
 }
 
 .text-overlay {
-  /* font-size: 1rem; */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -146,13 +148,7 @@ function handleClick(word) {
 .logo {
   fill: var(--vt-c-yellow);
   stroke-width: 0;
-  width: 6em;
-  height: 6em;
-}
-
-h1 {
-  background-color: var(--vt-c-blue) !important;
-  color: var(--vt-c-white);
-  padding: 0 0.3em;
+  width: 8em;
+  height: 8em;
 }
 </style>

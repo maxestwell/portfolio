@@ -60,7 +60,8 @@ function showProject(id) {
 .project-image,
 .project-gif,
 .project-video {
-  border: 1rem solid var(--vt-c-yellow);
+  padding: 1rem;
+  outline: 1px solid var(--vt-c-red);
   position: absolute;
   top: 0;
   left: 0;
@@ -72,5 +73,19 @@ function showProject(id) {
 
 .date {
   position: absolute;
+}
+
+h4 {
+  transition:
+    font-variation-settings 0.3s ease,
+    --font-slnt,
+    --font-wght,
+    font-size 0.3s ease;
+}
+
+.details:hover h4 {
+  --font-slnt: -10;
+  --font-wght: 550;
+  font-size: 1.5rem;
 }
 </style>
