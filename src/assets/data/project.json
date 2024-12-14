@@ -173,39 +173,5 @@
         "path": "/portfolio/media/personal-website-mockup.jpg"
       }
     ]
-  },
-  {
-    "id": 5,
-    "text": [
-      {
-        "title": "title",
-        "subtitle": "subtitle",
-        "date": "00/00",
-        "description": [
-          "description-p1",
-          "description-p2",
-          "description-p3"
-        ],
-        "font": {
-          "family": "area-variable",
-          "INKT": 100,
-          "slnt": 0,
-          "wdth": 100,
-          "wght": 500
-        }
-      }
-    ],
-    "media": [
-      {
-        "type": "image",
-        "alt": "img1",
-        "path": "/portfolio/media/test.jpg"
-      },
-      {
-        "type": "image",
-        "alt": "img2",
-        "path": "/portfolio/media/test.jpg"
-      }
-    ]
   }
 ]

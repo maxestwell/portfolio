@@ -48,8 +48,8 @@ function handleClick(word) {
   if (state.clickSequence.join(' ') === 'is max well') {
     console.log('Correct sequence completed')
     state.currentMessage = state.messages[Math.floor(Math.random() * state.messages.length)]
-    state.randomTop = Math.random() * 95 + 'vh'
-    state.randomLeft = Math.random() * 95 + 'vw'
+    state.randomTop = Math.random() * 95 + 'dvh'
+    state.randomLeft = Math.random() * 95 + 'dvw'
     state.randomRotation = Math.random() * 360 + 'deg'
     state.showMessage = true
     setTimeout(() => {
@@ -148,7 +148,7 @@ h1:hover {
 .logo {
   fill: var(--vt-c-yellow);
   stroke-width: 0;
-  width: 8em;
-  height: 8em;
+  width: 10em;
+  height: 10em;
 }
 </style>
