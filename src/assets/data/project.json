@@ -27,9 +27,9 @@
         "path": "/portfolio/media/hand-tracking-synth-mockup.jpg"
       },
       {
-        "type": "gif",
+        "type": "image",
         "alt": "hand tracking synth animation",
-        "path": "/portfolio/media/cycling-74-max-edit-mode.gif"
+        "path": "/portfolio/media/cycling-74-max-edit-mode.jpg"
       }
     ]
   },
