@@ -14,6 +14,9 @@ jobs:
         with:
           lfs: true
 
+      - name: Verify LFS files
+        run: git lfs ls-files
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
