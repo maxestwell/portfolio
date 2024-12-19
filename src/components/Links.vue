@@ -2,7 +2,7 @@
 import IconBandcamp from './icons/IconBandcamp.vue'
 import IconGithub from './icons/IconGithub.vue'
 import IconInstagram from './icons/IconInstagram.vue'
-import IconLinkedin from './icons/IconLinkedIn.vue'
+import IconLinkedin from './icons/IconLinkedin.vue'
 </script>
 
 <template>

@@ -18,7 +18,7 @@ import Links from '@/components/Links.vue'
       </div>
     </div>
     <div class="links-home">
-      <!-- <h2 class="area-variable slant">what does maxwell do?/h2> -->
+      <!-- <h2 class="area-variable slant">what do i do?/h2> -->
       <div class="links-container">
         <RouterLink to="/projects">
           <h4 class="hover-effect area-variable">design</h4>
@@ -87,7 +87,7 @@ h2.area-variable {
   flex-grow: 1;
   border: 1px solid var(--vt-c-red);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 
