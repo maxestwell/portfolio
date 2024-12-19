@@ -22,7 +22,7 @@
   /* background-color: var(--vt-c-yellow); */
   height: fit-content;
   width: fit-content;
-  /* line-height: 1.2; */
+  line-height: 1.2;
 }
 
 /* ::target-text {
@@ -90,7 +90,7 @@ ul {
     gap: 1rem;
   }
 
-  h1 {
+  /* h1 {
     font-size: 2rem;
   }
 
@@ -127,7 +127,7 @@ ul {
   i {
     --font-slnt: -10;
     font-style: normal;
-  }
+  } */
 }
 
 /* Small to Medium Screens (Phones and small tablets) */

@@ -67,15 +67,15 @@ function handleClick(word) {
   <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
   <div class="heading">
     <RouterLink to="/">
-      <h1 ref="textElement" @click="handleClick('max')">max</h1>
+      <h1 ref="textElement" @click="handleClick('max')" class="area-variable">max</h1>
     </RouterLink>
     <!-- &nbsp;&nbsp; -->
     <RouterLink to="/">
-      <h1 @click="handleClick('is')">is</h1>
+      <h1 @click="handleClick('is')" class="area-variable">is</h1>
     </RouterLink>
     <!-- &nbsp;&nbsp; -->
     <RouterLink to="/">
-      <h1 @click="handleClick('well')">well</h1>
+      <h1 @click="handleClick('well')" class="area-variable">well</h1>
     </RouterLink>
   </div>
 
@@ -89,8 +89,8 @@ function handleClick(word) {
     }"
   >
     <Logo class="logo" />
-    <h6 class="text-overlay text-node-ignore">
-      <i>{{ state.currentMessage }}</i>
+    <h6 class="text-overlay text-node-ignore slant">
+      {{ state.currentMessage }}
     </h6>
   </div>
 </template>
@@ -102,16 +102,16 @@ h1 {
   padding: 0rem 1rem;
   transition:
     font-variation-settings 0.3s ease,
-    --font-slnt,
-    --font-wdth,
     --font-wght,
+    --font-slnt,
+    --area-wdth,
     padding 0.3s ease;
 }
 
 h1:hover {
-  --font-slnt: -10;
-  --font-wdth: 200;
   --font-wght: 900;
+  --font-slnt: -10;
+  --area-wdth: 200;
   padding: 0rem 0rem;
 }
 

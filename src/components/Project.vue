@@ -39,6 +39,10 @@ const getMediaType = (type) => {
   }
   return mediaMap[type] || 'div' // Fallback
 }
+
+const splitTitle = computed(() => {
+  return project.value?.text?.[0]?.title.split(' ') || []
+})
 </script>
 
 <template>
@@ -56,26 +60,39 @@ const getMediaType = (type) => {
     </div>
     <div class="project-text-container">
       <div class="project-text text-h1">
-        <h1 :style="fontStyle">{{ project.text[0].title }}</h1>
+        <h1
+          v-for="(word, index) in splitTitle"
+          :key="index"
+          :style="fontStyle"
+          class="area-variable word"
+        >
+          {{ word }}
+        </h1>
       </div>
       <div class="project-text text-h3">
-        <h3 class="heading-wrapper-ignore">
-          <i>{{ project.text[0].subtitle }}</i>
+        <h3 class="heading-wrapper-ignore area-variable slant">
+          {{ project.text[0].subtitle }}
         </h3>
       </div>
       <div class="project-text text-h6">
-        <h6 class="heading-wrapper-ignore">{{ project.text[0].date }}</h6>
+        <h6 class="heading-wrapper-ignore area-variable">{{ project.text[0].date }}</h6>
       </div>
       <div class="project-text text-p">
-        <p v-for="(paragraph, index) in project.text[0].description" :key="index">
+        <p
+          v-for="(paragraph, index) in project.text[0].description"
+          :key="index"
+          class="area-variable"
+        >
           {{ paragraph }}
         </p>
       </div>
     </div>
   </div>
   <div v-else>
-    <p>Project not found. Please check the project ID.</p>
-    <router-link to="/">Return to home</router-link>
+    <p class="area-variable">Project not found.</p>
+    <router-link to="/">
+      <h4 class="area-variable">Return to home</h4>
+    </router-link>
   </div>
 </template>
 
@@ -99,7 +116,7 @@ const getMediaType = (type) => {
 .project-media {
   line-height: 0;
   padding: 1rem;
-  outline: 1px solid var(--vt-c-red);
+  border: 1px solid var(--vt-c-red);
 }
 
 /* .project-media img {
@@ -138,5 +155,10 @@ p:last-child {
 
 .text-p {
   padding-bottom: 0em;
+}
+
+.word {
+  display: block;
+  margin: 0;
 }
 </style>

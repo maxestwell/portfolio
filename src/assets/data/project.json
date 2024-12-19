@@ -173,5 +173,35 @@
         "path": "/portfolio/media/personal-website-mockup.jpg"
       }
     ]
+  },
+  {
+    "id": 5,
+    "text": [
+      {
+        "title": "Personal Website",
+        "subtitle": "Portfolio",
+        "date": "04/23",
+        "description": [
+          "description-p1",
+          "description-p2",
+          "description-p3",
+          "description-p4"
+        ],
+        "font": {
+          "family": "area-variable",
+          "INKT": 100,
+          "slnt": 0,
+          "wdth": 100,
+          "wght": 500
+        }
+      }
+    ],
+    "media": [
+      {
+        "type": "image",
+        "alt": "personal website mockup",
+        "path": "/portfolio/media/personal-website-mockup.jpg"
+      }
+    ]
   }
 ]

@@ -37,7 +37,7 @@ function showProject(id) {
       />
     </div>
 
-    <h4>{{ project.text[0].title }}</h4>
+    <h4 class="area-variable">{{ project.text[0].title }}</h4>
   </a>
 </template>
 
@@ -46,7 +46,7 @@ function showProject(id) {
   /* background-color: var(--vt-c-gray); */
   width: 100%;
   display: grid;
-  grid: auto-flow / 1fr 4fr;
+  grid: auto-flow / 1fr 3fr;
   gap: 1rem;
   align-items: end;
 }
@@ -60,8 +60,8 @@ function showProject(id) {
 .project-image,
 .project-gif,
 .project-video {
-  padding: 1rem;
-  outline: 1px solid var(--vt-c-red);
+  /* padding: 1rem; */
+  /* border: 1px solid var(--vt-c-red); */
   position: absolute;
   top: 0;
   left: 0;
@@ -77,15 +77,15 @@ function showProject(id) {
 
 h4 {
   transition:
+    font-size 0.3s ease,
     font-variation-settings 0.3s ease,
     --font-slnt,
-    --font-wght,
-    font-size 0.3s ease;
+    --font-wght;
 }
 
 .details:hover h4 {
   --font-slnt: -10;
   --font-wght: 550;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 </style>

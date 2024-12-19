@@ -49,7 +49,7 @@ onMounted(() => {
 <template>
   <div class="everything-container" v-text-node-styler>
     <div v-if="isLoading" class="loading-overlay">
-      <h4 class="text-overlay text-node-ignore"><i>Loading...</i></h4>
+      <h4 class="area-variable text-overlay text-node-ignore slant">Loading...</h4>
       <Logo class="logo" />
     </div>
     <header>
@@ -57,7 +57,7 @@ onMounted(() => {
     </header>
     <RouterView class="everything" />
     <footer>
-      <p><i>hi, my name is max. i like design and music. woohoo</i></p>
+      <p class="area-variable slant">hi, my name is max. i like design and music. woohoo</p>
     </footer>
   </div>
 </template>
@@ -122,7 +122,7 @@ header {
 .everything {
   flex-grow: 1;
   margin: 1rem;
-  outline: 1px solid var(--vt-c-red);
+  border: 1px solid var(--vt-c-red);
 }
 
 p {

@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <Project :projectId="projectId" v-heading-wrapper />
+  <Project :projectId="projectId" />
 </template>
 
 <style scoped></style>

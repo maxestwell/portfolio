@@ -1,19 +1,20 @@
 :root {
-  --font-inkt: 100;
-  --font-slnt: 0;
-  --font-wdth: 100;
+  font-size: 12px;
   --font-wght: 500;
+  --font-slnt: 0;
+  --area-wdth: 100;
+  --area-inkt: 100;
 }
 
-body {
+.area-variable {
   font-family: 'area-variable', sans-serif;
-  font-variation-settings:
-    'INKT' var(--font-inkt),
-    'slnt' var(--font-slnt),
-    'wdth' var(--font-wdth),
-    'wght' var(--font-wght);
 }
 
+.sigurd-variable {
+  font-family: 'sigurd-variable', sans-serif;
+}
+
+body,
 h1,
 h2,
 h3,
@@ -21,49 +22,54 @@ h4,
 h5,
 h6,
 p,
-i {
+i,
+b {
+  font-size: unset;
   font-variation-settings:
-    'INKT' var(--font-inkt),
+    'wght' var(--font-wght),
     'slnt' var(--font-slnt),
-    'wdth' var(--font-wdth),
-    'wght' var(--font-wght);
+    'wdth' var(--area-wdth),
+    'INKT' var(--area-inkt);
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 h3 {
   --font-wght: 550;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 h4 {
-  --font-wght: 600;
-  font-size: 1.25rem;
+  --font-wght: 550;
+  font-size: 1.5rem;
 }
 
 h5 {
   --font-wght: 600;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 h6 {
   --font-wght: 600;
-  font-size: 0.75rem;
-}
-
-p {
-  --font-inkt: 0;
-  --font-wght: 400;
   font-size: 1rem;
 }
 
-i {
+p {
+  --font-wght: 450;
+  --area-inkt: 0;
+  font-size: 1rem;
+}
+
+.slant {
   --font-slnt: -10;
-  font-style: normal;
+}
+
+.bold {
+  --area-wdth: 200;
 }
