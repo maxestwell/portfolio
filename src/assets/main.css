@@ -90,7 +90,7 @@ ul {
     gap: 1rem;
   }
 
-  /* h1 {
+  h1 {
     font-size: 2rem;
   }
 
@@ -124,10 +124,9 @@ ul {
     font-size: 0.75rem;
   }
 
-  i {
-    --font-slnt: -10;
-    font-style: normal;
-  } */
+  .icon-container {
+    padding: 0rem 1rem !important;
+  }
 }
 
 /* Small to Medium Screens (Phones and small tablets) */

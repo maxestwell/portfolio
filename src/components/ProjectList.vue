@@ -55,6 +55,7 @@ function showProject(id) {
   width: 100%;
   padding-top: 100%;
   position: relative;
+  border: 1px solid var(--vt-c-red);
 }
 
 .project-image,

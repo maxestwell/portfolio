@@ -17,17 +17,15 @@ import Links from '@/components/Links.vue'
         </div>
       </div>
     </div>
-    <div class="links-home">
-      <!-- <h2 class="area-variable slant">what do i do?/h2> -->
-      <div class="links-container">
-        <RouterLink to="/projects">
-          <h4 class="hover-effect area-variable">design</h4>
-        </RouterLink>
-        <h5 class="area-variable">+</h5>
-        <RouterLink to="/music">
-          <h4 class="hover-effect area-variable">music</h4>
-        </RouterLink>
-      </div>
+    <div class="links links-design">
+      <RouterLink to="/projects">
+        <h4 class="hover-effect area-variable">design</h4>
+      </RouterLink>
+    </div>
+    <div class="links links-music">
+      <RouterLink to="/music">
+        <h4 class="hover-effect area-variable">music</h4>
+      </RouterLink>
     </div>
   </main>
 </template>
@@ -35,10 +33,9 @@ import Links from '@/components/Links.vue'
 <style scoped>
 .home {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid: repeat(2, 1fr) / repeat(2, 1fr);
   gap: 1rem;
-  padding: 1rem;
   height: 100%;
 }
 
@@ -47,7 +44,8 @@ h2.area-variable {
 }
 
 .top-home {
-  flex-grow: 1;
+  grid-column: span 2;
+  grid-row: 1;
   display: flex;
   gap: 1rem;
 }
@@ -70,29 +68,45 @@ h2.area-variable {
 }
 
 .about-container {
-  /* padding: 1rem; */
   padding-right: 25%;
   background-color: var(--vt-c-red);
   height: fit-content;
 }
 
-.links-home {
-  flex-grow: 1;
+.links-design {
+  border: 1px solid var(--vt-c-red);
+  width: 100%;
+  grid-column: 1;
+  grid-row: 2;
   display: flex;
   gap: 1rem;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.links-container {
-  flex-grow: 1;
+.links-music {
   border: 1px solid var(--vt-c-red);
+  width: 100%;
+  grid-column: 2;
+  grid-row: 2;
   display: flex;
-  justify-content: space-evenly;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 a {
   width: fit-content;
+}
+
+.links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .hover-effect {
@@ -103,7 +117,7 @@ a {
     font-size 0.3s ease;
 }
 
-.hover-effect:hover {
+.links:hover .hover-effect {
   --font-wght: 500;
   --font-slnt: -10;
   font-size: 2.5rem;

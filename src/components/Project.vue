@@ -99,7 +99,7 @@ const splitTitle = computed(() => {
 <style scoped>
 .project-container {
   display: flex;
-  /* gap: 1rem; */
+  gap: 1rem;
 }
 
 .project-media-container {
@@ -115,7 +115,6 @@ const splitTitle = computed(() => {
 
 .project-media {
   line-height: 0;
-  padding: 1rem;
   border: 1px solid var(--vt-c-red);
 }
 
@@ -134,7 +133,6 @@ const splitTitle = computed(() => {
   position: sticky;
   top: 0;
   align-self: flex-start;
-  padding: 0rem 1rem 1rem 1rem;
 }
 
 .project-text {

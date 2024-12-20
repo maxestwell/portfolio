@@ -123,6 +123,7 @@ header {
   flex-grow: 1;
   margin: 1rem;
   border: 1px solid var(--vt-c-red);
+  padding: 1rem;
 }
 
 p {
