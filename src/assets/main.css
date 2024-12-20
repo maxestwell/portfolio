@@ -127,6 +127,10 @@ ul {
   .icon-container {
     padding: 0rem 1rem !important;
   }
+
+  .secondary {
+    flex-direction: column !important;
+  }
 }
 
 /* Small to Medium Screens (Phones and small tablets) */
