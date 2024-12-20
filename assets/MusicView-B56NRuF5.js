@@ -1,1 +1,0 @@
-import{_ as a,c as s,a as r,o as c}from"./index-D7G77uBX.js";const o={};function t(n,e){return c(),s("div",null,e[0]||(e[0]=[r("h1",{class:"area-variable"},"music",-1)]))}const l=a(o,[["render",t]]);export{l as default};
