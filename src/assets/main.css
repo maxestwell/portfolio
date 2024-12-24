@@ -79,11 +79,6 @@ ul {
     /* Add other styles as needed */
   }
 
-  .details h4 {
-    padding-left: 1rem !important;
-    /* Add other styles as needed */
-  }
-
   .project-container {
     display: flex !important;
     flex-direction: column !important;
