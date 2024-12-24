@@ -66,24 +66,23 @@ function handleClick(word) {
 </script>
 
 <template>
-  <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
   <div class="heading">
     <RouterLink to="/" class="max-header">
-      <IconLeft class="icon target1" />
+      <IconLeft class="icon icon1" />
       <h1 ref="textElement" @click="handleClick('max')" class="area-variable anchor">max</h1>
-      <IconRight class="icon target2" />
+      <IconRight class="icon icon2" />
     </RouterLink>
     <!-- &nbsp;&nbsp; -->
     <RouterLink to="/" class="max-header">
-      <IconLeft class="icon target1" />
+      <IconLeft class="icon icon1" />
       <h1 @click="handleClick('is')" class="area-variable anchor">is</h1>
-      <IconRight class="icon target2" />
+      <IconRight class="icon icon2" />
     </RouterLink>
     <!-- &nbsp;&nbsp; -->
     <RouterLink to="/" class="max-header">
-      <IconLeft class="icon target1" />
+      <IconLeft class="icon icon1" />
       <h1 @click="handleClick('well')" class="area-variable anchor">well</h1>
-      <IconRight class="icon target2" />
+      <IconRight class="icon icon2" />
     </RouterLink>
   </div>
 
@@ -109,27 +108,16 @@ function handleClick(word) {
   z-index: -1;
   height: 100%;
   fill: var(--vt-c-blue);
-  /* stroke: var(--vt-c-blue);
-  stroke-width: 1px; */
 }
 
-.anchor {
-  anchor-name: --my-anchor;
-}
-
-.target1 {
+.icon1 {
   position: absolute;
-  position-anchor: --my-anchor;
-  right: calc(anchor(--my-anchor 50%) + 35%);
-  /* position-area: center left; */
+  right: 85%;
 }
 
-.target2 {
+.icon2 {
   position: absolute;
-  position-anchor: --my-anchor;
-  left: calc(anchor(--my-anchor 50%) + 35%);
-
-  /* position-area: center right; */
+  left: 85%;
 }
 
 .heading {
@@ -143,20 +131,10 @@ function handleClick(word) {
 
 .max-header {
   position: relative;
-  display: inline-block; /* Change display to inline-block */
+  display: inline-block;
   max-height: fit-content;
   display: flex;
 }
-
-/* .icon {
-  position: absolute;
-  transform: scale(1);
-  fill: none;
-  stroke: var(--vt-c-blue);
-  stroke-width: 1px;
-  width: 100%;
-  height: 100%;
-} */
 
 h1::before {
   pointer-events: none;
@@ -173,9 +151,6 @@ h1::before {
 }
 
 h1 {
-  /* border: solid var(--vt-c-blue);
-  border-width: 1px 0px; */
-  /* background-color: var(--vt-c-blue) !important; */
   color: var(--vt-c-white);
   padding: 0rem 1rem;
   transition:
